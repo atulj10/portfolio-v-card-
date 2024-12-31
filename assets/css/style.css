@@ -981,6 +981,13 @@ main {
 
 .project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
 
+.project-icon-container{
+  display: flex;
+  flex-direction: row;
+  gap: 10;
+  background-color: red;
+}
+
 .project-item-icon-box {
   --scale: 0.8;
 
@@ -988,7 +995,7 @@ main {
   color: var(--orange-yellow-crayola);
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%) scale(var(--scale));
   font-size: 20px;
   padding: 18px;
@@ -996,6 +1003,12 @@ main {
   opacity: 0;
   z-index: 1;
   transition: var(--transition-1);
+}
+.project-item-icon-box2 {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  
 }
 
 .project-item > a:hover .project-item-icon-box {
