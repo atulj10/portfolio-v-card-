@@ -1898,3 +1898,37 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/* Falling Stars Animation */
+@keyframes falling {
+  0% {
+    transform: translate(0, -10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.star {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  animation: falling linear infinite;
+}
+
+/* Adjust the main content to appear above stars */
+.main-content {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(16, 19, 28, 0.85); /* Slightly transparent to show stars */
+}
+
+
