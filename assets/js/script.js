@@ -150,7 +150,7 @@ function createStars() {
     star.className = "star";
 
     // Random properties for each star
-    const size = Math.random() * 2 + 1;
+    const size = Math.random() * 5 + 1;
     const duration = Math.random() * 5 + 5;
     const delay = Math.random() * 10;
     const left = Math.random() * 100;
