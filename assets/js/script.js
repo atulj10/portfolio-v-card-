@@ -173,3 +173,82 @@ function createStars() {
 
 // Call the function when the page loads
 window.addEventListener("load", createStars);
+
+
+
+//projects
+const projects = [
+  {
+    title: "E-Commerce",
+    category: "Web development",
+    image: "./assets/images/project-1.jpg",
+    github: "https://github.com/atulj10/ECommerce",
+    live: null
+  },
+  {
+    title: "MPV(lead generator)",
+    category: "Web development",
+    image: "./assets/images/project-2.png",
+    github: null,
+    live: null
+  },
+  {
+    title: "Figma clone",
+    category: "Web development",
+    image: "./assets/images/project-4.png",
+    github: "https://github.com/atulj10/figma_clone",
+    live: "https://figma-clone-nu-ten.vercel.app/"
+  },
+  {
+    title: "Alumnuat(social media)",
+    category: "Web development",
+    image: "./assets/images/project-5.png",
+    github: null,
+    live: null
+  },
+  {
+    title: "Task manager",
+    category: "Web development",
+    image: "./assets/images/project-6.png",
+    github: "https://github.com/atulj10/Advance-Task-Manager",
+    live: "https://advance-task-manager.vercel.app/"
+  },
+  {
+    title: "Landing page(firm eservices)",
+    category: "Web development",
+    image: "./assets/images/project-7.png",
+    github: "https://github.com/atulj10/E-Service",
+    live: "https://e-service-zeta.vercel.app/"
+  }
+];
+
+const projectList = document.getElementById("project-list");
+
+  projects.forEach((project) => {
+    const li = document.createElement("li");
+    li.className = "project-item active";
+    li.setAttribute("data-filter-item", "");
+    li.setAttribute("data-category", project.category.toLowerCase());
+
+    li.innerHTML = `
+      <a class="project-container" href="#">
+        <figure class="project-img">
+          ${project.live ? `
+            <div onclick="window.location.href='${project.live}'" class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>` : ''
+          }
+          ${project.github ? `
+            <div onclick="window.location.href='${project.github}'" class="project-item-icon-box2 project-item-icon-box">
+              <ion-icon name="logo-github"></ion-icon>
+            </div>` : ''
+          }
+          <img style="object-fit: contain" src="${project.image}" alt="${project.title}" loading="lazy" />
+        </figure>
+        <h3 class="project-title">${project.title}</h3>
+        <p class="project-category">${project.category}</p>
+      </a>
+    `;
+    
+    projectList.appendChild(li);
+  });
