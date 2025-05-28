@@ -1238,6 +1238,18 @@ main {
   background-color: var(--onyx);
   transform: translateY(-2px);
 }
+.warning-box {
+  background-color: #fff9db; /* soft yellow */
+  border-left: 6px solid #f1c40f; /* stronger yellow border */
+  padding: 12px 16px;
+  margin: 12px 0;
+  color: #665c00; /* dark yellow/brownish text */
+  font-size: 1rem;
+  border-radius: 4px;
+  display: flex;
+  gap: 0.2rem;
+  box-sizing: border-box;
+}
 
 @media (min-width: 768px) {
   .project-detail-content {

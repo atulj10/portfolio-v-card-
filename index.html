@@ -783,7 +783,7 @@
             <button class="back-btn" onclick="showProjectList()">
               <ion-icon name="arrow-back"></ion-icon> Back to Projects
             </button>
-            <h2 class="h2  detail-title" id="project-detail-title"></h2>
+            <h2 class="h2 detail-title" id="project-detail-title"></h2>
           </header>
 
           <section class="project-detail-content">
@@ -791,10 +791,24 @@
               <figure class="project-detail-img">
                 <img id="project-detail-image" src="" alt="" loading="lazy" />
               </figure>
+              <div class="warning-box">
+                <strong>Note:</strong>
+                <p>
+                  Please ensure all sensitive data is handled according to
+                  compliance guidelines.</p>
+                </p>
+              </div>
 
               <div class="project-info">
                 <ul class="tech-stack-list" id="project-tech-stack"></ul>
-                <p class="project-text" id="project-detail-description"></p>
+                <div
+                  style="
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                  "
+                  class="project-text"
+                  id="project-detail-description"
+                ></div>
 
                 <div class="project-links">
                   <a

@@ -184,9 +184,18 @@ window.addEventListener("load", createStars);
 const projects = [
   {
     title: "E-Commerce",
-    description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
-    techStack: ["React", "Node.js", "MongoDB", "Express"],
+    description: `<p>We <strong>built</strong> a robust and secure authentication system designed for both users and administrators, <strong>ensuring</strong> that access to sensitive areas is tightly controlled and that the overall system integrity remains uncompromised. This comprehensive security framework protects user data and maintains trust across the platform.</p><p>     To <strong>optimize</strong> the user experience, we developed advanced search functionality and filtering options that allow users to quickly find exactly what they need, <strong>increasing user engagement by 30%</strong>. Alongside this, we <strong>streamlined</strong> the checkout process by integrating Braintree, a reliable payment gateway, which <strong>reduced checkout times by half</strong> and <strong>improved</strong> the efficiency of order management for admins, leading to smoother operations and faster processing.</p><p>          Furthermore, we <strong>boosted</strong> overall engagement and revenue by implementing dynamic item suggestions tailored to user preferences and browsing behavior. This feature effectively <strong>drove cross-selling opportunities</strong>, encouraging users to explore related products and enhancing the shopping experience through personalized recommendations.</p>
+    `,
+    techStack: [
+      "React",
+      "Context API",
+      "JWT",
+      "Bcrypt",
+      "Braintree",
+      "Node.js",
+      "MongoDB",
+      "Express",
+    ],
     category: "Web development",
     image: "./assets/images/project-1.jpg",
     github: "https://github.com/atulj10/ECommerce",
@@ -288,7 +297,7 @@ function showProjectDetails(projectIndex) {
   document.getElementById("project-detail-title").textContent = project.title;
   document.getElementById("project-detail-image").src = project.image;
   document.getElementById("project-detail-image").alt = project.title;
-  document.getElementById("project-detail-description").textContent =
+  document.getElementById("project-detail-description").innerHTML =
     project.description;
 
   // Set tech stack
