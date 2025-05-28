@@ -125,16 +125,22 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+    const targetPage = this.innerText.toLowerCase();
+
+    pages.forEach((page) => {
+      if (page.dataset.page === targetPage) {
+        page.classList.add("active");
+        page.style.display = "block";
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        page.classList.remove("active");
+        page.style.display = "none";
       }
-    }
+    });
+
+    navigationLinks.forEach((link) => link.classList.remove("active"));
+    this.classList.add("active");
+
+    window.scrollTo(0, 0);
   });
 }
 
@@ -174,81 +180,150 @@ function createStars() {
 // Call the function when the page loads
 window.addEventListener("load", createStars);
 
-
-
 //projects
 const projects = [
   {
     title: "E-Commerce",
+    description:
+      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
     category: "Web development",
     image: "./assets/images/project-1.jpg",
     github: "https://github.com/atulj10/ECommerce",
-    live: null
+    live: null,
   },
   {
     title: "MPV(lead generator)",
+    description:
+      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
     category: "Web development",
     image: "./assets/images/project-2.png",
     github: null,
-    live: null
+    live: null,
   },
   {
     title: "Figma clone",
+    description:
+      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
     category: "Web development",
     image: "./assets/images/project-4.png",
     github: "https://github.com/atulj10/figma_clone",
-    live: "https://figma-clone-nu-ten.vercel.app/"
+    live: "https://figma-clone-nu-ten.vercel.app/",
   },
   {
     title: "Alumnuat(social media)",
+    description:
+      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
     category: "Web development",
     image: "./assets/images/project-5.png",
     github: null,
-    live: null
+    live: null,
   },
   {
     title: "Task manager",
+    description:
+      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
     category: "Web development",
     image: "./assets/images/project-6.png",
     github: "https://github.com/atulj10/Advance-Task-Manager",
-    live: "https://advance-task-manager.vercel.app/"
+    live: "https://advance-task-manager.vercel.app/",
   },
   {
     title: "Landing page(firm eservices)",
+    description:
+      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
+    techStack: ["React", "Node.js", "MongoDB", "Express"],
     category: "Web development",
     image: "./assets/images/project-7.png",
     github: "https://github.com/atulj10/E-Service",
-    live: "https://e-service-zeta.vercel.app/"
-  }
+    live: "https://e-service-zeta.vercel.app/",
+  },
 ];
 
 const projectList = document.getElementById("project-list");
 
-  projects.forEach((project) => {
-    const li = document.createElement("li");
-    li.className = "project-item active";
-    li.setAttribute("data-filter-item", "");
-    li.setAttribute("data-category", project.category.toLowerCase());
+projects.forEach((project, index) => {
+  const li = document.createElement("li");
+  li.className = "project-item active";
+  li.setAttribute("data-filter-item", "");
+  li.setAttribute("data-category", project.category.toLowerCase());
 
-    li.innerHTML = `
-      <a class="project-container" href="#">
-        <figure class="project-img">
-          ${project.live ? `
-            <div onclick="window.location.href='${project.live}'" class="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
-            </div>` : ''
-          }
-          ${project.github ? `
-            <div onclick="window.location.href='${project.github}'" class="project-item-icon-box2 project-item-icon-box">
-              <ion-icon name="logo-github"></ion-icon>
-            </div>` : ''
-          }
-          <img style="object-fit: contain" src="${project.image}" alt="${project.title}" loading="lazy" />
-        </figure>
-        <h3 class="project-title">${project.title}</h3>
-        <p class="project-category">${project.category}</p>
-      </a>
-    `;
-    
-    projectList.appendChild(li);
+  li.innerHTML = `
+    <a class="project-container" href="#">
+      <figure class="project-img">
+        <img style="object-fit: contain" src="${project.image}" alt="${project.title}" loading="lazy" />
+      </figure>
+      <h3 class="project-title">${project.title}</h3>
+      <p class="project-category">${project.category}</p>
+    </a>
+  `;
+
+  // Add click event to show project details
+  li.addEventListener("click", (e) => {
+    e.preventDefault();
+    showProjectDetails(index);
   });
+
+  projectList.appendChild(li);
+});
+
+function showProjectDetails(projectIndex) {
+  // Hide all pages
+  document.querySelectorAll("[data-page]").forEach((page) => {
+    page.style.display = "none";
+  });
+
+  // Show project details page
+  const projectDetailsPage = document.querySelector(
+    '[data-page="project-details"]'
+  );
+  projectDetailsPage.style.display = "block";
+
+  // Set project details
+  const project = projects[projectIndex];
+  document.getElementById("project-detail-title").textContent = project.title;
+  document.getElementById("project-detail-image").src = project.image;
+  document.getElementById("project-detail-image").alt = project.title;
+  document.getElementById("project-detail-description").textContent =
+    project.description;
+
+  // Set tech stack
+  const techStackList = document.getElementById("project-tech-stack");
+  techStackList.innerHTML = "";
+  project.techStack.forEach((tech) => {
+    const li = document.createElement("li");
+    li.textContent = tech;
+    techStackList.appendChild(li);
+  });
+
+  // Set links
+  const githubLink = document.getElementById("project-github-link");
+  const liveLink = document.getElementById("project-live-link");
+
+  if (project.github) {
+    githubLink.href = project.github;
+    githubLink.style.display = "flex";
+  } else {
+    githubLink.style.display = "none";
+  }
+
+  if (project.live) {
+    liveLink.href = project.live;
+    liveLink.style.display = "flex";
+  } else {
+    liveLink.style.display = "none";
+  }
+}
+
+function showProjectList() {
+  // Hide project details page
+  document.querySelector('[data-page="project-details"]').style.display =
+    "none";
+
+  // Show projects page
+  document.querySelector('[data-page="project"]').style.display = "block";
+}

@@ -773,6 +773,54 @@
           </section>
         </article>
 
+        <!-- Project Detail -->
+        <article
+          class="project-details"
+          data-page="project-details"
+          style="display: none"
+        >
+          <header>
+            <button class="back-btn" onclick="showProjectList()">
+              <ion-icon name="arrow-back"></ion-icon> Back to Projects
+            </button>
+            <h2 class="h2  detail-title" id="project-detail-title"></h2>
+          </header>
+
+          <section class="project-detail-content">
+            <div class="main-div">
+              <figure class="project-detail-img">
+                <img id="project-detail-image" src="" alt="" loading="lazy" />
+              </figure>
+
+              <div class="project-info">
+                <ul class="tech-stack-list" id="project-tech-stack"></ul>
+                <p class="project-text" id="project-detail-description"></p>
+
+                <div class="project-links">
+                  <a
+                    id="project-github-link"
+                    href="#"
+                    target="_blank"
+                    class="project-link"
+                    style="display: none"
+                  >
+                    <ion-icon name="logo-github"></ion-icon> GitHub
+                  </a>
+                  <a
+                    id="project-live-link"
+                    href="#"
+                    target="_blank"
+                    class="project-link"
+                    style="display: none"
+                  >
+                    <ion-icon name="globe-outline"></ion-icon> Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+
         <!--
         - #BLOG
       -->
