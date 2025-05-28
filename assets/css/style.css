@@ -1246,8 +1246,6 @@ main {
   color: #665c00; /* dark yellow/brownish text */
   font-size: 1rem;
   border-radius: 4px;
-  display: flex;
-  gap: 0.2rem;
   box-sizing: border-box;
 }
 

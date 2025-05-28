@@ -184,7 +184,9 @@ window.addEventListener("load", createStars);
 const projects = [
   {
     title: "E-Commerce",
-    description: `<p>We <strong>built</strong> a robust and secure authentication system designed for both users and administrators, <strong>ensuring</strong> that access to sensitive areas is tightly controlled and that the overall system integrity remains uncompromised. This comprehensive security framework protects user data and maintains trust across the platform.</p><p>     To <strong>optimize</strong> the user experience, we developed advanced search functionality and filtering options that allow users to quickly find exactly what they need, <strong>increasing user engagement by 30%</strong>. Alongside this, we <strong>streamlined</strong> the checkout process by integrating Braintree, a reliable payment gateway, which <strong>reduced checkout times by half</strong> and <strong>improved</strong> the efficiency of order management for admins, leading to smoother operations and faster processing.</p><p>          Furthermore, we <strong>boosted</strong> overall engagement and revenue by implementing dynamic item suggestions tailored to user preferences and browsing behavior. This feature effectively <strong>drove cross-selling opportunities</strong>, encouraging users to explore related products and enhancing the shopping experience through personalized recommendations.</p>
+    description: `<p>We <strong>built</strong> a robust and secure authentication system designed for both users and administrators, <strong>ensuring</strong> that access to sensitive areas is tightly controlled and that the overall system integrity remains uncompromised. This comprehensive security framework protects user data and maintains trust across the platform.</p>
+    <p>&nbsp;&nbsp;&nbsp;To <strong>optimize</strong> the user experience, we developed advanced search functionality and filtering options that allow users to quickly find exactly what they need, <strong>increasing user engagement by 30%</strong>. Alongside this, we <strong>streamlined</strong> the checkout process by integrating Braintree, a reliable payment gateway, which <strong>reduced checkout times by half</strong> and <strong>improved</strong> the efficiency of order management for admins, leading to smoother operations and faster processing.</p>
+    <p>Furthermore, we <strong>boosted</strong> overall engagement and revenue by implementing dynamic item suggestions tailored to user preferences and browsing behavior. This feature effectively <strong>drove cross-selling opportunities</strong>, encouraging users to explore related products and enhancing the shopping experience through personalized recommendations.</p>
     `,
     techStack: [
       "React",
@@ -200,6 +202,8 @@ const projects = [
     image: "./assets/images/project-1.jpg",
     github: "https://github.com/atulj10/ECommerce",
     live: null,
+    issue:
+      "Live link is not active due the issue with database and server deployment.",
   },
   {
     title: "MPV(lead generator)",
@@ -210,6 +214,8 @@ const projects = [
     image: "./assets/images/project-2.png",
     github: null,
     live: null,
+    issue:
+      "Due to the project's confidentiality, I am unable to share the live hosted link and the GitHub repo at this instance.",
   },
   {
     title: "Figma clone",
@@ -220,6 +226,7 @@ const projects = [
     image: "./assets/images/project-4.png",
     github: "https://github.com/atulj10/figma_clone",
     live: "https://figma-clone-nu-ten.vercel.app/",
+    issue: null,
   },
   {
     title: "Alumnuat(social media)",
@@ -230,6 +237,7 @@ const projects = [
     image: "./assets/images/project-5.png",
     github: null,
     live: null,
+    issue: null,
   },
   {
     title: "Task manager",
@@ -240,6 +248,7 @@ const projects = [
     image: "./assets/images/project-6.png",
     github: "https://github.com/atulj10/Advance-Task-Manager",
     live: "https://advance-task-manager.vercel.app/",
+    issue: null,
   },
   {
     title: "Landing page(firm eservices)",
@@ -250,6 +259,7 @@ const projects = [
     image: "./assets/images/project-7.png",
     github: "https://github.com/atulj10/E-Service",
     live: "https://e-service-zeta.vercel.app/",
+    issue: null,
   },
 ];
 
@@ -325,6 +335,19 @@ function showProjectDetails(projectIndex) {
     liveLink.style.display = "flex";
   } else {
     liveLink.style.display = "none";
+  }
+  const warningBox = document.getElementsByClassName("warning-box")[0];
+  const warningText = document.getElementById("warning-text");
+
+  if (project.issue) {
+    if (warningBox && warningText) {
+      warningText.innerHTML = `<strong>Note:</strong> ${project.issue} Apologies for the inconvenience`;
+      warningBox.style.display = "flex";
+    }
+  } else {
+    if (warningBox) {
+      warningBox.style.display = "none";
+    }
   }
 }
 
