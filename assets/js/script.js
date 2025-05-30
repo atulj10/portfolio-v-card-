@@ -1,5 +1,15 @@
 "use strict";
 
+const carousel = document.querySelector(".skills-carousel");
+const indicators = document.querySelectorAll(".indicator-line");
+
+carousel.addEventListener("scroll", () => {
+  const index = Math.round(carousel.scrollTop / carousel.clientHeight);
+  indicators.forEach((line, i) => {
+    line.classList.toggle("active", i === index);
+  });
+});
+
 //projects
 const projects = [
   {
@@ -223,7 +233,7 @@ const projects = [
   This project is a comprehensive <strong>engineering service website</strong> that I <strong>designed and developed entirely from scratch</strong>, incorporating <strong>advanced custom components</strong> that were <strong>iteratively refined</strong> based on client feedback. The site <strong>delivers a seamless user experience</strong> and is fully responsive across devices. It also <strong>integrates essential communication tools</strong> such as <strong>Google Maps</strong> for location access, <strong>WhatsApp</strong> and <strong>Messenger</strong> for direct contact, and the company’s <strong>Instagram page</strong> for social engagement—creating a connected and client-centric digital presence.
 </p>
 `,
-    techStack: ["React", "BootStrap","Meta buisness","IFrame"],
+    techStack: ["React", "BootStrap", "Meta buisness", "IFrame"],
     category: "Web development",
     image: "./assets/images/project-7.png",
     github: "https://github.com/atulj10/E-Service",
@@ -236,7 +246,7 @@ const projects = [
   This project is a fully functional <strong>task manager application</strong> that I <strong>conceptualized, designed, and developed from scratch</strong>, featuring a clean and intuitive UI for <strong>task and date-wise filtering</strong>. The platform <strong>enables users to manage tasks efficiently</strong> through a structured interface, allowing seamless organization of daily responsibilities. It also includes <strong>secure user authentication</strong> to <strong>protect user data</strong> and provide a personalized task management experience across sessions.
 </p>
 `,
-    techStack: ["React", "Firebase","TailwindCSS"],
+    techStack: ["React", "Firebase", "TailwindCSS"],
     category: "Web development",
     image: "./assets/images/project-6.png",
     github: "https://github.com/atulj10/Advance-Task-Manager",

@@ -595,6 +595,125 @@ main {
   line-height: 1.6;
 }
 
+/* Skills */
+.skills-carousel-section {
+  padding: 4rem 1rem 2rem;
+  padding-top: 0;
+  font-family: var(--ff-poppins);
+  color: var(--white-1);
+  position: relative;
+}
+
+.skills-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.skills-carousel {
+  height: 280px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+
+.skills-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.skills-group {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  scroll-snap-align: start;
+}
+
+.skill-card {
+  background: var(--bg-gradient-jet);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ensures square cards */
+  text-align: center;
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-3);
+}
+
+.skill-card ion-icon {
+  font-size: 2.5rem;
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  font-size: var(--fs-6);
+  color: var(--light-gray-70);
+}
+
+/* Group Indicator */
+.skills-indicator {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.indicator-line {
+  width: 6px;
+  height: 30px;
+  border-radius: 3px;
+  background: var(--light-gray-70);
+  transition: background var(--transition-1);
+}
+
+.indicator-line.active {
+  background: var(--orange-yellow-crayola);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-carousel {
+    height: 300px;
+  }
+
+  .skills-indicator {
+    right: -12px;
+    gap: 6px;
+  }
+
+  .indicator-line {
+    height: 20px;
+  }
+}
+
 /**
  * #testimonials 
  */
@@ -1214,7 +1333,7 @@ main {
   color: var(--light-gray-70);
 }
 
-.project-text p{
+.project-text p {
   padding-bottom: 0.4rem;
 }
 .project-links {
