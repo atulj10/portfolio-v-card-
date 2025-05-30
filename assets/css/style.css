@@ -1210,10 +1210,13 @@ main {
 
 .project-text {
   font-size: var(--fs-4);
-  line-height: 1.7;
+  line-height: 1.9;
   color: var(--light-gray-70);
 }
 
+.project-text p{
+  padding-bottom: 0.4rem;
+}
 .project-links {
   display: flex;
   flex-wrap: wrap;

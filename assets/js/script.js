@@ -3,43 +3,63 @@
 //projects
 const projects = [
   {
-    title: "E-Commerce",
-    description: `<p>We <strong>built</strong> a robust and secure authentication system designed for both users and administrators, <strong>ensuring</strong> that access to sensitive areas is tightly controlled and that the overall system integrity remains uncompromised. This comprehensive security framework protects user data and maintains trust across the platform.</p>
-    <p>&nbsp;&nbsp;&nbsp;To <strong>optimize</strong> the user experience, we developed advanced search functionality and filtering options that allow users to quickly find exactly what they need, <strong>increasing user engagement by 30%</strong>. Alongside this, we <strong>streamlined</strong> the checkout process by integrating Braintree, a reliable payment gateway, which <strong>reduced checkout times by half</strong> and <strong>improved</strong> the efficiency of order management for admins, leading to smoother operations and faster processing.</p>
-    <p>Furthermore, we <strong>boosted</strong> overall engagement and revenue by implementing dynamic item suggestions tailored to user preferences and browsing behavior. This feature effectively <strong>drove cross-selling opportunities</strong>, encouraging users to explore related products and enhancing the shopping experience through personalized recommendations.</p>
-    `,
-    techStack: [
-      "React",
-      "Context API",
-      "JWT",
-      "Bcrypt",
-      "Braintree",
-      "Node.js",
-      "MongoDB",
-      "Express",
-    ],
-    category: "Web development",
-    image: "./assets/images/project-1.jpg",
-    github: "https://github.com/atulj10/ECommerce",
-    live: null,
-    issue:
-      "Live link is not active due the issue with database and server deployment.",
-  },
-  {
-    title: "MPV(lead generator)",
+    title: "Finance Software(powered by Gemini)",
     description: `<p>
-  During my internship with a shadow startup, I <strong>developed</strong> a fully responsive MVP website that <strong>enabled</strong> users to <strong>create</strong> personalized AI agents and <strong>train</strong> them using custom datasets. The platform <strong>focused</strong> on empowering individuals to <strong>upload</strong> and <strong>manage</strong> their data efficiently, thereby tailoring AI agents to their specific needs. I <strong>implemented</strong> robust multi-step forms across the site, with all validations <strong>handled</strong> using <strong>Zod</strong> for schema-based type safety and consistency, ensuring a secure and seamless user experience.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Throughout the project, I <strong>built</strong> multiple high-level, complex, and reusable <strong>custom frontend components</strong> to enhance functionality and maintain code scalability. I <strong>leveraged</strong> modern development practices to <strong>optimize</strong> performance, <strong>ensure</strong> responsiveness across devices, and <strong>maintain</strong> UI consistency. This project significantly <strong>strengthened</strong> my skills in building production-grade React applications, working with form validation libraries like Zod, and architecting scalable frontend components tailored to dynamic user inputs.
+  This project is a robust <strong>multi-account financial management system</strong> that <strong>enables</strong> users to <strong>track transactions</strong>, <strong>monitor spending in real time</strong>, and <strong>manage budgets</strong> across all  <strong>different accounts</strong>. The system <strong>streamlines financial organization</strong> by offering centralized access to all account activities and <strong>provides clarity</strong> into user's financial behavior through intuitive interfaces.
+</p>
+<p>
+
+ &nbsp;&nbsp;&nbsp;&nbsp;  To enhance data visibility, the platform <strong>features an interactive dashboard</strong> that <strong>visualizes financial analytics</strong> using dynamic charts and graphs. Users can <strong>analyze spending patterns</strong>, <strong>track budget utilization</strong>, and <strong>gain insights</strong> into their financial health with ease. Components like <strong>Recharts</strong> and <strong>TailwindCSS</strong> were <strong>utilized and customized</strong> to deliver a clean, responsive, and informative user experience.
+</p>
+<p>
+  The system also <strong>implements automated email notifications</strong> using <strong>Inngest</strong> to deliver monthly reports and <strong>trigger alerts at 80% budget usage</strong>. To ensure secure and scalable access, the API layer was <strong>protected using Arcjet</strong> for <strong>rate limiting</strong> and <strong>bot detection</strong>. Authentication and user management were handled with <strong>Clerk</strong>, and the backend was <strong>built using Next.js and Prisma</strong> for high-performance database interactions. The integration of <strong>Gemini API</strong> further extends the system’s analytical capabilities, offering smart recommendations and insights.
 </p>
 `,
-    techStack: ["Nextjs", "Shadcn", "Zod", "Recharts", "IonIcons"],
-    category: "Internship",
-    image: "./assets/images/project-2.png",
-    github: null,
-    live: null,
-    issue:
-      "Due to the project's confidentiality, I am unable to share the live hosted link and the GitHub repo at this instance.",
+    techStack: [
+      "Nextjs",
+      "Prisma",
+      "Inngest",
+      "Arcjet",
+      "Clerk",
+      "Gemini API",
+      "Recharts",
+      "Shadcn",
+      "TailwindCSS",
+    ],
+    category: "AI",
+    image: "./assets/images/project-4.png",
+    github: "https://ai-finance-platform-bay.vercel.app/",
+    live: "https://ai-finance-platform-bay.vercel.app/",
+    issue: null,
+  },
+  {
+    title: "Smart Document Assistant",
+    description: `<p>
+  This project <strong>harnesses the power of Gemini Flash architecture</strong> and <strong>Langchain Embedding</strong> to <strong>extract, analyze, and synthesize</strong> critical information from a wide range of document formats, including <strong>PDFs, Excel sheets, and website links</strong> into <strong>Vector embedding</strong>, which is then used to search for the required information related to the user's query.. Users can <strong>upload their documents</strong> and instantly <strong>generate a personalized AI chatbot</strong> capable of understanding and responding to queries based on the uploaded content. The system <strong>streamlines information retrieval</strong>, making document-based Q&A <strong>fast, intuitive, and efficient</strong>.
+</p>
+<p>
+  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; It <strong>orchestrates sophisticated no-code deployment workflows</strong> that <strong>customize and optimize conversational experiences</strong> for users. By <strong>integrating LangChain with Gemini API</strong>, the platform <strong>enables real-time, context-aware responses</strong> that evolve with user input. Whether for corporate documentation, research papers, or data-heavy spreadsheets, the chatbot <strong>delivers high-quality, contextually accurate answers</strong> without requiring technical expertise from the user.
+</p>
+<p>
+  The backend <strong>leverages Next.js and MongoDB</strong>, with <strong>MongoDB Vector Search</strong> powering intelligent document indexing and retrieval. The system <strong>revolutionizes data interaction</strong> by <strong>using real-time analytics</strong> to <strong>enhance response accuracy</strong> and <strong>accelerate knowledge discovery</strong>. With its seamless integration of cutting-edge AI technologies and a user-centric interface, this project stands as a next-gen tool for <strong>document-driven conversational intelligence</strong>.
+</p>
+
+`,
+    techStack: [
+      "Nextjs",
+      "MongoDB",
+      "LangChain",
+      "MongoDB Vector Search",
+      "NextAuth",
+      "Gemini API",
+      "Shadcn",
+      "TailwindCSS",
+    ],
+    category: "AI",
+    image: "./assets/images/project-4.png",
+    github: "https://github.com/atulj10/ai-agent",
+    live: "https://ai-agent-gmwu.vercel.app/",
+    issue: "The project is still in progress so some things might not work.",
   },
   {
     title: "Figma clone",
@@ -71,15 +91,77 @@ const projects = [
     issue: null,
   },
   {
-    title: "Alumnuat(social media)",
-    description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
-    techStack: ["React", "Node.js", "MongoDB", "Express"],
+    title: "Alumnuat",
+    description: `<p>
+  This project is a <strong>social media-like platform</strong> specifically designed to <strong>connect</strong> students with their <strong>desired college alumni</strong>. The frontend is made using React, whereas the backend is powered the php framework <strong>Laravel</strong>. Students can <strong>seek personalized counseling</strong> by <strong>sending requests</strong> to associated alumni. Once an alumni <strong>accepts</strong> the request, both parties can <strong>engage in real-time chat</strong> and even <strong>schedule video conferences via Zoom</strong>. All scheduled sessions are <strong>visually presented</strong> in an <strong>eye-soothing UI</strong> that <strong>enhances clarity and user experience</strong>.
+</p>
+
+<p>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The platform <strong>features an advanced search and filter system</strong> that allows students to <strong>search alumni</strong> by <strong>name, college, degree</strong>, and other parameters. It also includes an <strong>intelligent recommendation engine</strong> that <strong>suggests relevant alumni</strong> based on the student's selected colleges, degree preferences, or curriculum stream. Students can <strong>set preferred colleges</strong> to <strong>refine future recommendations</strong>, making the platform more personalized and effective over time.
+</p>
+
+<p>
+  The website is <strong>enriched with modern, high-quality UI components</strong> such as <a href="https://ui.aceternity.com/components/tracing-beam" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">Ray Tracer</strong></a>, <a href="https://ui.aceternity.com/components/github-globe" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">GitHub Globe</strong></a>, <a href="https://ui.aceternity.com/components/infinite-moving-cards" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">Infinity Cards</strong></a>, and <a href="https://mui.com/material-ui/react-stepper/" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">MUI Stepper</strong></a>. All these components were <strong>fully customized and integrated</strong> to match the branding and functionality of the application. The site was also <strong>engineered to be fully responsive</strong>, ensuring optimal user experience across all screen sizes and devices. All the component was showcased by the use of <strong>Storybook</strong>.
+</p>
+`,
+    techStack: [
+      "React",
+      "Laravel 11",
+      "Sanctum",
+      "SQL",
+      "Firebase authentication",
+      "Redux",
+      "Tailwind",
+      "Framer-Motion",
+      "Storybook",
+      "ZOOM API",
+    ],
     category: "Internship",
     image: "./assets/images/project-5.png",
     github: null,
     live: null,
     issue: null,
+  },
+  {
+    title: "E-Commerce",
+    description: `<p>We <strong>built</strong> a robust and secure authentication system designed for both users and administrators, <strong>ensuring</strong> that access to sensitive areas is tightly controlled and that the overall system integrity remains uncompromised. This comprehensive security framework protects user data and maintains trust across the platform.</p>
+    <p>&nbsp;&nbsp;&nbsp;To <strong>optimize</strong> the user experience, we developed advanced search functionality and filtering options that allow users to quickly find exactly what they need, <strong>increasing user engagement by 30%</strong>. Alongside this, we <strong>streamlined</strong> the checkout process by integrating Braintree, a reliable payment gateway, which <strong>reduced checkout times by half</strong> and <strong>improved</strong> the efficiency of order management for admins, leading to smoother operations and faster processing.</p>
+    <p>Furthermore, we <strong>boosted</strong> overall engagement and revenue by implementing dynamic item suggestions tailored to user preferences and browsing behavior. This feature effectively <strong>drove cross-selling opportunities</strong>, encouraging users to explore related products and enhancing the shopping experience through personalized recommendations.</p>
+    `,
+    techStack: [
+      "React",
+      "Context API",
+      "JWT",
+      "Bcrypt",
+      "Braintree",
+      "Node.js",
+      "MongoDB",
+      "Express",
+    ],
+    category: "Web development",
+    image: "./assets/images/project-1.jpg",
+    video:
+      "https://drive.google.com/uc?export=download&id=15G0CuUoV4IltphNz-zz_eNZoWkUKXHX_",
+    github: "https://github.com/atulj10/ECommerce",
+    live: null,
+    issue:
+      "Live link is not active due the issue with database and server deployment.",
+  },
+  {
+    title: "MPV(lead generator)",
+    description: `<p>
+  During my internship with a shadow startup, I <strong>developed</strong> a fully responsive MVP website that <strong>enabled</strong> users to <strong>create</strong> personalized AI agents and <strong>train</strong> them using custom datasets. The platform <strong>focused</strong> on empowering individuals to <strong>upload</strong> and <strong>manage</strong> their data efficiently, thereby tailoring AI agents to their specific needs. I <strong>implemented</strong> robust multi-step forms across the site, with all validations <strong>handled</strong> using <strong>Zod</strong> for schema-based type safety and consistency, ensuring a secure and seamless user experience.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Throughout the project, I <strong>built</strong> multiple high-level, complex, and reusable <strong>custom frontend components</strong> to enhance functionality and maintain code scalability. I <strong>leveraged</strong> modern development practices to <strong>optimize</strong> performance, <strong>ensure</strong> responsiveness across devices, and <strong>maintain</strong> UI consistency. This project significantly <strong>strengthened</strong> my skills in building production-grade React applications, working with form validation libraries like Zod, and architecting scalable frontend components tailored to dynamic user inputs.
+</p>
+`,
+    techStack: ["Nextjs", "Shadcn", "Zod", "Recharts", "IonIcons"],
+    category: "Internship",
+    image: "./assets/images/project-2.png",
+    github: null,
+    live: null,
+    issue:
+      "Due to the project's confidentiality, I am unable to share the live hosted link and the GitHub repo at this instance.",
   },
   {
     title: "Task manager",
