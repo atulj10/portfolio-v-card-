@@ -32,6 +32,7 @@ const projects = [
     live: "https://ai-finance-platform-bay.vercel.app/",
     issue: null,
   },
+
   {
     title: "Smart Document Assistant",
     description: `<p>
@@ -91,24 +92,56 @@ const projects = [
     issue: null,
   },
   {
-    title: "Alumnuat",
+    title: "Dr Car",
     description: `<p>
-  This project is a <strong>social media-like platform</strong> specifically designed to <strong>connect</strong> students with their <strong>desired college alumni</strong>. The frontend is made using React, whereas the backend is powered the php framework <strong>Laravel</strong>. Students can <strong>seek personalized counseling</strong> by <strong>sending requests</strong> to associated alumni. Once an alumni <strong>accepts</strong> the request, both parties can <strong>engage in real-time chat</strong> and even <strong>schedule video conferences via Zoom</strong>. All scheduled sessions are <strong>visually presented</strong> in an <strong>eye-soothing UI</strong> that <strong>enhances clarity and user experience</strong>.
+  This project is a feature-rich <strong>customer-facing mobile application</strong> developed for both <strong>iOS and Android platforms</strong>, catering to the automotive domain. The platform <strong>enables users to register and authenticate</strong> securely, supporting different user types such as <strong>Buyers</strong> and <strong>Sellers</strong>. Registration is mandatory to <strong>purchase vehicles</strong> or <strong>request services</strong>, with mechanisms like <strong>email/OTP verification</strong> to ensure account security. Sellers undergo additional verification steps, including <strong>document and phone validation</strong>, before they can <strong>list vehicles for sale</strong> with complete details like make, model, mileage, pricing, and images.
 </p>
 
 <p>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The platform <strong>features an advanced search and filter system</strong> that allows students to <strong>search alumni</strong> by <strong>name, college, degree</strong>, and other parameters. It also includes an <strong>intelligent recommendation engine</strong> that <strong>suggests relevant alumni</strong> based on the student's selected colleges, degree preferences, or curriculum stream. Students can <strong>set preferred colleges</strong> to <strong>refine future recommendations</strong>, making the platform more personalized and effective over time.
+  Buyers can <strong>search and filter car listings</strong> based on parameters like <strong>make, model, location, price range, and mileage</strong>, with each listing displaying comprehensive specifications, condition, and history. The app also <strong>integrates secure payment options</strong> through trusted gateways supporting <strong>credit/debit cards, net banking, and digital wallets</strong> for safe transactions. Users can <strong>browse available repair services</strong>, <strong>create service requests</strong> with vehicle details and preferred time slots, and <strong>track request statuses</strong> from initiation to completion. Upon successful servicing, users can <strong>confirm completion</strong>, <strong>rate service advisors</strong>, and <strong>submit reviews</strong>.
 </p>
 
 <p>
-  The website is <strong>enriched with modern, high-quality UI components</strong> such as <a href="https://ui.aceternity.com/components/tracing-beam" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">Ray Tracer</strong></a>, <a href="https://ui.aceternity.com/components/github-globe" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">GitHub Globe</strong></a>, <a href="https://ui.aceternity.com/components/infinite-moving-cards" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">Infinity Cards</strong></a>, and <a href="https://mui.com/material-ui/react-stepper/" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">MUI Stepper</strong></a>. All these components were <strong>fully customized and integrated</strong> to match the branding and functionality of the application. The site was also <strong>engineered to be fully responsive</strong>, ensuring optimal user experience across all screen sizes and devices. All the component was showcased by the use of <strong>Storybook</strong>.
+  Additional key features include a <strong>communication system</strong> that <strong>enables direct calling</strong> between users and service advisors, <strong>live location fetching</strong> using GPS coordinates for service delivery, and structured <strong>service evaluation forms</strong> for quality feedback. The app also allows users to <strong>update profile details</strong>, including contact information and profile pictures, ensuring a personalized and streamlined experience. Through its robust architecture and seamless UI, this application <strong>bridges the gap</strong> between vehicle buyers, sellers, and service providers in a single, mobile-first ecosystem.
 </p>
 `,
+    techStack: [
+      "React Native",
+      "Laravel 11",
+      "Sanctum",
+      "SQL",
+      "Firebase authentication",
+      "Redux",
+      "Tailwind",
+    ],
+    category: "Internship",
+    image: "./assets/images/project-12.png",
+    github: null,
+    live: null,
+    issue:
+      "Due to the project's confidentiality, I am unable to share the live hosted link and the GitHub repo at this instance.",
+  },
+  {
+    title: "Alumnuat",
+    description: `<p>
+      <strong>Alumnaut</strong> is a mentorship platform built to <strong>bridge the gap</strong> between aspiring college students and verified alumni mentors. Its mission is to <strong>empower students</strong> by <strong>offering personalized guidance</strong> during the college application journey. By <strong>facilitating direct interactions</strong> between students and experienced alumni, Alumnaut <strong>helps demystify the admissions process</strong> and <strong>provides actionable insights</strong> rooted in real-world experiences. The platform emphasizes <strong>community support</strong> and aims to pave the way for academic and career success through meaningful mentorship connections.
+    </p>
+    
+    <p>
+      The platform includes a range of core functionalities such as <strong>role-based registration</strong> (student or alumni), <strong>profile management</strong>, and <strong>personalized dashboards</strong> for each user type. Students can <strong>search for mentors</strong>, <strong>chat in real-time</strong>, and <strong>schedule virtual meetings via Zoom</strong>. Alumni are encouraged to <strong>share their expertise</strong>, showcase their background, and engage with mentees. The admin dashboard <strong>enables efficient user and content management</strong>, offering tools to <strong>moderate user-generated content</strong>, <strong>edit landing pages</strong>, and <strong>publish blogs, FAQs, and legal documents</strong> with ease.
+    </p>
+    
+    <p>
+      A key feature of Alumnaut is its <strong>recommendation and matching algorithm</strong> that <strong>connects students with alumni mentors</strong> based on shared interests, preferred departments, and college choices. Unlike NLP-driven systems, this algorithm <strong>uses a structured matching approach</strong> focused on clear and relevant filters to ensure optimal pairings. The platform also adheres to strict <strong>data privacy standards</strong>, offering secure logins, encrypted communication, and transparent privacy policies. Through its comprehensive design and rich features, Alumnaut <strong>delivers an intuitive and secure mentorship experience</strong> for both students and alumni.
+    </p>
+    <p>The website is <strong>enriched with modern, high-quality UI components</strong> such as <a href="https://ui.aceternity.com/components/tracing-beam" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">Ray Tracer</strong></a>, <a href="https://ui.aceternity.com/components/github-globe" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">GitHub Globe</strong></a>, <a href="https://ui.aceternity.com/components/infinite-moving-cards" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">Infinity Cards</strong></a>, and <a href="https://mui.com/material-ui/react-stepper/" target="_blank" style="display:inline-block;"><strong style="color:var(--vegas-gold)">MUI Stepper</strong></a>. All these components were <strong>fully customized and integrated</strong> to match the branding and functionality of the application. The site was also <strong>engineered to be fully responsive</strong>, ensuring optimal user experience across all screen sizes and devices. All the component was showcased by the use of <strong>Storybook</strong>.</p>
+    `,
     techStack: [
       "React",
       "Laravel 11",
       "Sanctum",
       "SQL",
+      "BackPack",
       "Firebase authentication",
       "Redux",
       "Tailwind",
@@ -120,7 +153,8 @@ const projects = [
     image: "./assets/images/project-5.png",
     github: null,
     live: null,
-    issue: null,
+    issue:
+      "Due to the project's confidentiality, I am unable to share the live hosted link and the GitHub repo at this instance.",
   },
   {
     title: "E-Commerce",
@@ -148,6 +182,26 @@ const projects = [
       "Live link is not active due the issue with database and server deployment.",
   },
   {
+    title: "Car recognition for traffic",
+    description: `<p>
+  This project is an advanced <strong>image recognition software</strong> that <strong>leverages the YOLO (You Only Look Once) algorithm</strong> to <strong>detect and classify objects</strong> in images with high accuracy and speed. It was specifically <strong>designed to monitor vehicles</strong> at traffic light stops, <strong>identifying cars in real-time</strong> and <strong>marking them</strong> using clearly defined rectangles with labels. The solution <strong>outputs a processed image</strong> showing all detected objects with visual indicators, making it practical for <strong>traffic management and urban monitoring applications</strong>.
+</p>
+<p>
+  The backend is <strong>built using Flask and Python</strong>, with core image processing handled by <strong>OpenCV</strong> and object detection by <strong>YOLO</strong>. Libraries like <strong>NumPy</strong> assist in handling image arrays, while <strong>Flask-CORS</strong> is used to <strong>enable seamless communication</strong> between the backend and frontend. The system <strong>processes uploaded images</strong> server-side and <strong>returns annotated results</strong> to the client with minimal latency.
+</p>
+<p>
+  The frontend is <strong>developed using React.js and Bootstrap</strong> to <strong>create a responsive, user-friendly interface</strong> that allows users to <strong>upload images and view detection results instantly</strong>. The entire solution is optimized for speed and usability, making it highly effective in real-world use cases like smart traffic systems. This project <strong>demonstrates a solid integration</strong> of AI-powered image detection with full-stack web development for real-time visual analytics.
+</p>
+    `,
+    techStack: ["React", "Python", "Flask", "YOLO3", "OpenCV", "BootStrap 5"],
+    category: "AI",
+    image: "./assets/images/project-9.png",
+    github: "https://github.com/atulj10/Image-Procesing/tree/master",
+    live: null,
+    issue:
+      "Due server deployment issue with python live link is not available.",
+  },
+  {
     title: "MPV(lead generator)",
     description: `<p>
   During my internship with a shadow startup, I <strong>developed</strong> a fully responsive MVP website that <strong>enabled</strong> users to <strong>create</strong> personalized AI agents and <strong>train</strong> them using custom datasets. The platform <strong>focused</strong> on empowering individuals to <strong>upload</strong> and <strong>manage</strong> their data efficiently, thereby tailoring AI agents to their specific needs. I <strong>implemented</strong> robust multi-step forms across the site, with all validations <strong>handled</strong> using <strong>Zod</strong> for schema-based type safety and consistency, ensuring a secure and seamless user experience.</p>
@@ -164,25 +218,29 @@ const projects = [
       "Due to the project's confidentiality, I am unable to share the live hosted link and the GitHub repo at this instance.",
   },
   {
-    title: "Task manager",
-    description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
-    techStack: ["React", "Node.js", "MongoDB", "Express"],
-    category: "Web development",
-    image: "./assets/images/project-6.png",
-    github: "https://github.com/atulj10/Advance-Task-Manager",
-    live: "https://advance-task-manager.vercel.app/",
-    issue: null,
-  },
-  {
-    title: "Landing page(firm eservices)",
-    description:
-      "A full-featured e-commerce platform with product listings, cart functionality, and user authentication.",
-    techStack: ["React", "Node.js", "MongoDB", "Express"],
+    title: "EServices(Landing Page)",
+    description: `<p>
+  This project is a comprehensive <strong>engineering service website</strong> that I <strong>designed and developed entirely from scratch</strong>, incorporating <strong>advanced custom components</strong> that were <strong>iteratively refined</strong> based on client feedback. The site <strong>delivers a seamless user experience</strong> and is fully responsive across devices. It also <strong>integrates essential communication tools</strong> such as <strong>Google Maps</strong> for location access, <strong>WhatsApp</strong> and <strong>Messenger</strong> for direct contact, and the company’s <strong>Instagram page</strong> for social engagement—creating a connected and client-centric digital presence.
+</p>
+`,
+    techStack: ["React", "BootStrap","Meta buisness","IFrame"],
     category: "Web development",
     image: "./assets/images/project-7.png",
     github: "https://github.com/atulj10/E-Service",
     live: "https://e-service-zeta.vercel.app/",
+    issue: null,
+  },
+  {
+    title: "Task manager",
+    description: `<p>
+  This project is a fully functional <strong>task manager application</strong> that I <strong>conceptualized, designed, and developed from scratch</strong>, featuring a clean and intuitive UI for <strong>task and date-wise filtering</strong>. The platform <strong>enables users to manage tasks efficiently</strong> through a structured interface, allowing seamless organization of daily responsibilities. It also includes <strong>secure user authentication</strong> to <strong>protect user data</strong> and provide a personalized task management experience across sessions.
+</p>
+`,
+    techStack: ["React", "Firebase","TailwindCSS"],
+    category: "Web development",
+    image: "./assets/images/project-6.png",
+    github: "https://github.com/atulj10/Advance-Task-Manager",
+    live: "https://advance-task-manager.vercel.app/",
     issue: null,
   },
 ];
