@@ -256,7 +256,7 @@ projects.forEach((project, index) => {
   li.innerHTML = `
     <a class="project-container" href="#">
       <figure class="project-img">
-        <img style="object-fit: contain" src="${project.image}" alt="${project.title}" loading="lazy" />
+        <img style="object-fit: cover" src="${project.image}" alt="${project.title}" loading="lazy" />
       </figure>
       <h3 class="project-title">${project.title}</h3>
       <p class="project-category">${project.category}</p>
