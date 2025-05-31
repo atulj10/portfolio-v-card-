@@ -3,8 +3,41 @@
 const carousel = document.querySelector(".skills-carousel");
 const indicators = document.querySelectorAll(".indicator-line");
 
+let currentIndex = 0;
+const groupCount = carousel.children.length;
+
+function scrollToGroup(index) {
+  const scrollAmount = index * carousel.clientHeight;
+  carousel.scrollTo({ top: scrollAmount, behavior: "smooth" });
+
+  indicators.forEach((line, i) => {
+    line.classList.toggle("active", i === index);
+  });
+}
+
+// Setup interval
+let autoScrollInterval = setInterval(() => {
+  currentIndex = (currentIndex + 1) % groupCount;
+  scrollToGroup(currentIndex);
+}, 2000);
+
+// Pause on hover
+carousel.addEventListener("mouseenter", () => {
+  clearInterval(autoScrollInterval);
+});
+
+// Resume on mouse leave
+carousel.addEventListener("mouseleave", () => {
+  autoScrollInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % groupCount;
+    scrollToGroup(currentIndex);
+  }, 2000);
+});
+
+// Manual scroll still updates indicators
 carousel.addEventListener("scroll", () => {
   const index = Math.round(carousel.scrollTop / carousel.clientHeight);
+  currentIndex = index;
   indicators.forEach((line, i) => {
     line.classList.toggle("active", i === index);
   });

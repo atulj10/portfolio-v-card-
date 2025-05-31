@@ -614,8 +614,8 @@ main {
 }
 
 .skills-carousel {
-  height: 280px;
-  overflow-y: scroll;
+  height: 300px;
+  overflow-y: hidden;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;
 }
@@ -628,7 +628,7 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.4rem;
   padding: 1.5rem;
   scroll-snap-align: start;
 }
@@ -638,7 +638,7 @@ main {
   border-radius: 12px;
   padding: 1rem;
   width: 100%;
-  aspect-ratio: 1 / 1; /* ensures square cards */
+  aspect-ratio: 1 / 1; 
   text-align: center;
   box-shadow: var(--shadow-1);
   transition: transform var(--transition-1);
@@ -647,11 +647,12 @@ main {
   align-items: center;
   justify-content: center;
   min-width: 90px;
+  cursor: pointer;
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--vegas-gold);
 }
 
 .skill-card ion-icon {
