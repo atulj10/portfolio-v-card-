@@ -1,47 +1,185 @@
 "use strict";
 
+// Skill data
+const skills = [
+  { name: "HTML", icon: "logo-html5" },
+  { name: "CSS", icon: "logo-css3" },
+  { name: "JavaScript", icon: "logo-javascript" },
+  { name: "React", icon: "logo-react" },
+  { name: "Node.js", icon: "logo-nodejs" },
+  { name: "GitHub", icon: "logo-github" },
+  { name: "Git", icon: "git-branch-outline" },
+  { name: "Firebase", icon: "logo-firebase" },
+  { name: "Python", icon: "logo-python" },
+  { name: "Laravel", icon: "logo-laravel" },
+  { name: "Angular", icon: "logo-angular" },
+  { name: "CLI", icon: "terminal-outline" },
+  { name: "Vue", icon: "logo-vue" },
+  { name: "Cloud", icon: "cloud-outline" },
+  { name: "SASS", icon: "logo-sass" },
+  { name: "Server", icon: "server-outline" },
+  { name: "Code", icon: "code-working-outline" },
+  { name: "Tools", icon: "construct-outline" },
+  { name: "Design", icon: "color-palette-outline" },
+  { name: "Security", icon: "shield-checkmark-outline" },
+];
+
+// DOM elements
 const carousel = document.querySelector(".skills-carousel");
-const indicators = document.querySelectorAll(".indicator-line");
+const indicatorContainer = document.querySelector(".skills-indicator");
+
+// Configuration
+const config = {
+  small: { cols: 2, rows: 3, breakpoint: 480 }, // 6 skills per group
+  medium: { cols: 3, rows: 3, breakpoint: 768 }, // 9 skills per group
+  large: { cols: 5, rows: 2, breakpoint: 992 }, // 10 skills per group
+};
 
 let currentIndex = 0;
-const groupCount = carousel.children.length;
+let autoScrollInterval;
+let groupCount = 0;
+let resizeTimeout;
+let isScrolling = false;
+
+// Initialize carousel
+function initCarousel() {
+  // Clear existing content
+  carousel.innerHTML = "";
+  indicatorContainer.innerHTML = "";
+
+  // Determine current screen size and group size
+  const screenWidth = window.innerWidth;
+  let groupSize;
+
+  if (screenWidth >= config.large.breakpoint) {
+    groupSize = config.large.cols * config.large.rows;
+  } else if (screenWidth >= config.medium.breakpoint) {
+    groupSize = config.medium.cols * config.medium.rows;
+  } else {
+    groupSize = config.small.cols * config.small.rows;
+  }
+
+  // Create skill groups
+  groupCount = Math.ceil(skills.length / groupSize);
+
+  for (let i = 0; i < groupCount; i++) {
+    const group = document.createElement("div");
+    group.className = "skills-group";
+
+    const skillsInGroup = skills.slice(i * groupSize, (i + 1) * groupSize);
+
+    skillsInGroup.forEach((skill) => {
+      const card = document.createElement("div");
+      card.className = "skill-card";
+      card.innerHTML = `
+        <ion-icon name="${skill.icon}"></ion-icon>
+        <p>${skill.name}</p>
+      `;
+      group.appendChild(card);
+    });
+
+    carousel.appendChild(group);
+
+    // Create indicator
+    const indicator = document.createElement("span");
+    indicator.className = "indicator-line";
+    if (i === 0) indicator.classList.add("active");
+    indicatorContainer.appendChild(indicator);
+  }
+
+  // Reset to first group when reinitializing
+  currentIndex = 0;
+  carousel.scrollTo({ top: 0, behavior: "auto" });
+
+  // Setup auto-scroll
+  setupAutoScroll();
+}
+
+// Setup auto-scroll functionality
+function setupAutoScroll() {
+  if (autoScrollInterval) clearInterval(autoScrollInterval);
+
+  autoScrollInterval = setInterval(() => {
+    if (!isScrolling && document.hasFocus()) {
+      currentIndex = (currentIndex + 1) % groupCount;
+      scrollToGroup(currentIndex);
+    }
+  }, 3000);
+
+  // Pause on hover
+  carousel.addEventListener("mouseenter", () => {
+    clearInterval(autoScrollInterval);
+  });
+
+  // Resume on mouse leave
+  carousel.addEventListener("mouseleave", () => {
+    autoScrollInterval = setInterval(() => {
+      if (!isScrolling) {
+        currentIndex = (currentIndex + 1) % groupCount;
+        scrollToGroup(currentIndex);
+      }
+    }, 3000);
+  });
+
+  // Manual scroll updates indicators
+  carousel.addEventListener("scroll", handleScroll);
+}
 
 function scrollToGroup(index) {
+  isScrolling = true;
   const scrollAmount = index * carousel.clientHeight;
-  carousel.scrollTo({ top: scrollAmount, behavior: "smooth" });
+  carousel.scrollTo({
+    top: scrollAmount,
+    behavior: "smooth",
+  });
 
+  updateIndicators();
+
+  // Reset scrolling flag after animation completes
+  setTimeout(() => {
+    isScrolling = false;
+  }, 1000);
+}
+
+function handleScroll() {
+  if (isScrolling) return;
+
+  const scrollPosition = carousel.scrollTop;
+  const groupHeight = carousel.clientHeight;
+  const newIndex = Math.round(scrollPosition / groupHeight);
+
+  if (newIndex !== currentIndex) {
+    currentIndex = newIndex;
+    updateIndicators();
+  }
+}
+
+function updateIndicators() {
+  const indicators = document.querySelectorAll(".indicator-line");
   indicators.forEach((line, i) => {
-    line.classList.toggle("active", i === index);
+    line.classList.toggle("active", i === currentIndex);
   });
 }
 
-// Setup interval
-let autoScrollInterval = setInterval(() => {
-  currentIndex = (currentIndex + 1) % groupCount;
-  scrollToGroup(currentIndex);
-}, 2000);
+// Initialize on load
+document.addEventListener("DOMContentLoaded", initCarousel);
 
-// Pause on hover
-carousel.addEventListener("mouseenter", () => {
-  clearInterval(autoScrollInterval);
+// Debounced resize handler
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    initCarousel();
+  }, 200);
 });
 
-// Resume on mouse leave
-carousel.addEventListener("mouseleave", () => {
-  autoScrollInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % groupCount;
-    scrollToGroup(currentIndex);
-  }, 2000);
-});
-
-// Manual scroll still updates indicators
-carousel.addEventListener("scroll", () => {
-  const index = Math.round(carousel.scrollTop / carousel.clientHeight);
-  currentIndex = index;
-  indicators.forEach((line, i) => {
-    line.classList.toggle("active", i === index);
-  });
-});
+// Pause when tab is not visible
+// document.addEventListener("visibilitychange", () => {
+//   if (document.hidden) {
+//     clearInterval(autoScrollInterval);
+//   } else {
+//     setupAutoScroll();
+//   }
+// });
 
 //projects
 const projects = [
