@@ -2,25 +2,21 @@
 
 // Skill data
 const skills = [
-  { name: "HTML", icon: "logo-html5" },
-  { name: "CSS", icon: "logo-css3" },
-  { name: "JavaScript", icon: "logo-javascript" },
   { name: "React", icon: "logo-react" },
+  { name: "Laravel", icon: "logo-laravel" },
   { name: "Node.js", icon: "logo-nodejs" },
   { name: "GitHub", icon: "logo-github" },
   { name: "Git", icon: "git-branch-outline" },
+  { name: "SQL", icon: "server-outline" },
   { name: "Firebase", icon: "logo-firebase" },
+  { name: "Clerk", icon: "code" },
+  { name: "HTML", icon: "logo-html5" },
+  { name: "C", icon: "code" },
+  { name: "C++", icon: "code" },
+  { name: "CSS", icon: "logo-css3" },
+  { name: "JavaScript", icon: "logo-javascript" },
   { name: "Python", icon: "logo-python" },
-  { name: "Laravel", icon: "logo-laravel" },
-  { name: "Angular", icon: "logo-angular" },
   { name: "CLI", icon: "terminal-outline" },
-  { name: "Vue", icon: "logo-vue" },
-  { name: "Cloud", icon: "cloud-outline" },
-  { name: "SASS", icon: "logo-sass" },
-  { name: "Server", icon: "server-outline" },
-  { name: "Code", icon: "code-working-outline" },
-  { name: "Tools", icon: "construct-outline" },
-  { name: "Design", icon: "color-palette-outline" },
   { name: "Security", icon: "shield-checkmark-outline" },
 ];
 
