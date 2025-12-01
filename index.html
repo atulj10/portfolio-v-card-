@@ -1,69 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vCard - Personal project</title>
 
-    <!--
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vCard - Personal project</title>
+
+  <!--
     - favicon
   -->
-    <link
-      rel="shortcut icon"
-      href="./assets/images/logo.ico"
-      type="image/x-icon"
-    />
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon" />
 
-    <!--
+  <!--
     - custom css link
   -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!--
+  <!--
     - google font link
   -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-  </head>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
 
-  <body>
-    <!--
+<body>
+  <!--
     - #MAIN
   -->
 
-    <main>
-      <!--
+  <main>
+    <!--
       - #SIDEBAR
     -->
 
-      <aside class="sidebar" data-sidebar>
-        <div class="sidebar-info">
-          <figure class="avatar-box">
-            <img
-              src="./assets/images/my-avatar.png"
-              alt="Atul Anand"
-              width="80"
-            />
-          </figure>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Atul Anand" width="80" />
+        </figure>
 
-          <div class="info-content">
-            <h1 class="name" title="Atul Anand">Atul Anand</h1>
-            <p class="title">Software Developer</p>
-            <!-- <div class="title-container">
+        <div class="info-content">
+          <h1 class="name" title="Atul Anand">Atul Anand</h1>
+          <p class="title">Software Developer</p>
+          <!-- <div class="title-container">
               <p class="title-onyx">Full-Stack</p>
               <p class="title-yellow">Student</p>
               <p class="title-red">UI/UX</p>
@@ -71,105 +55,89 @@
               <p class="title-grey">Laravel</p>
                <p class="title-yellow">MERN</p>
             </div> -->
-          </div>
-
-          <button class="info_more-btn" data-sidebar-btn>
-            <span>Show Contacts</span>
-
-            <ion-icon name="chevron-down"></ion-icon>
-          </button>
         </div>
 
-        <div class="sidebar-info_more">
-          <div class="separator"></div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
 
-          <ul class="contacts-list">
-            <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="mail-outline"></ion-icon>
-              </div>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
 
-              <div class="contact-info">
-                <p class="contact-title">Email</p>
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
 
-                <a href="mailto:atulanandj10@gmail.com" class="contact-link"
-                  >atulanandj10@gmail.com</a
-                >
-              </div>
-            </li>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
 
-            <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="phone-portrait-outline"></ion-icon>
-              </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
 
-              <div class="contact-info">
-                <p class="contact-title">Phone</p>
+              <a href="mailto:atulanandj10@gmail.com" class="contact-link">atulanandj10@gmail.com</a>
+            </div>
+          </li>
 
-                <a href="tel:+12133522795" class="contact-link"
-                  >+91 6205769890</a
-                >
-              </div>
-            </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
 
-            <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="calendar-outline"></ion-icon>
-              </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
 
-              <div class="contact-info">
-                <p class="contact-title">Birthday</p>
+              <a href="tel:+12133522795" class="contact-link">+91 6205769890</a>
+            </div>
+          </li>
 
-                <time datetime="1982-06-23">January 10,2004</time>
-              </div>
-            </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
 
-            <li class="contact-item">
-              <div class="icon-box">
-                <ion-icon name="location-outline"></ion-icon>
-              </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
 
-              <div class="contact-info">
-                <p class="contact-title">Location</p>
+              <time datetime="1982-06-23">January 10,2004</time>
+            </div>
+          </li>
 
-                <address>Ranchi Jharkhand, India</address>
-              </div>
-            </li>
-          </ul>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
 
-          <div class="separator"></div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
 
-          <ul class="social-list">
-            <li class="social-item">
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/atul-anand-a60941262/"
-                class="social-link"
-              >
-                <ion-icon class="socials-icons" name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
+              <address>Ranchi Jharkhand, India</address>
+            </div>
+          </li>
+        </ul>
 
-            <li class="social-item">
-              <a
-                target="_blank"
-                href="https://github.com/atulj10"
-                class="social-link"
-              >
-                <ion-icon class="socials-icons" name="logo-github"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://medium.com/@atulj10unofficial"
-                class="social-link"
-              >
-                <ion-icon class="socials-icons" name="logo-medium"></ion-icon>
-              </a>
-            </li>
+        <div class="separator"></div>
 
-            <!-- <li class="social-item">
+        <ul class="social-list">
+          <li class="social-item">
+            <a target="_blank" href="https://www.linkedin.com/in/atul-anand-a60941262/" class="social-link">
+              <ion-icon class="socials-icons" name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a target="_blank" href="https://github.com/atulj10" class="social-link">
+              <ion-icon class="socials-icons" name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://medium.com/@atulj10unofficial" class="social-link">
+              <ion-icon class="socials-icons" name="logo-medium"></ion-icon>
+            </a>
+          </li>
+
+          <!-- <li class="social-item">
               <a
                 target="_blank"
                 href="https://www.instagram.com/atulanandj10/?hl=en"
@@ -181,139 +149,127 @@
                 ></ion-icon>
               </a>
             </li> -->
-          </ul>
-        </div>
-      </aside>
+        </ul>
+      </div>
+    </aside>
 
-      <!--
+    <!--
       - #main-content
     -->
 
-      <div class="main-content">
-        <!--
+    <div class="main-content">
+      <!--
         - #NAVBAR
       -->
 
-        <nav class="navbar">
-          <ul class="navbar-list">
-            <li class="navbar-item">
-              <button class="navbar-link active" data-nav-link>About</button>
-            </li>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
 
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Resume</button>
-            </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
 
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Project</button>
-            </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Project</button>
+          </li>
 
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Blog</button>
-            </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
 
-            <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Contact</button>
-            </li>
-          </ul>
-        </nav>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+        </ul>
+      </nav>
 
-        <!--
+      <!--
         - #ABOUT
       -->
 
-        <article class="about active" data-page="about">
-          <header>
-            <h2 class="h2 article-title">About me</h2>
-          </header>
+      <article class="about active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
 
-          <section class="about-text">
-            <p>
-              I'm a Full Stack Developer and Creative Thinker from Bihar, India,
-              passionate about turning ideas into impactful and user-centric
-              digital experiences. With expertise across multiple technologies,
-              I bring a blend of innovation and functionality to every project I
-              undertake.
-            </p>
+        <section class="about-text">
+          <p>
+            I'm a Full Stack Developer and Creative Thinker from Bihar, India,
+            passionate about turning ideas into impactful and user-centric
+            digital experiences. With expertise across multiple technologies,
+            I bring a blend of innovation and functionality to every project I
+            undertake.
+          </p>
 
-            <p>
-              My role is to craft applications that are not only efficient and
-              reliable but also visually appealing and intuitive. By combining
-              technical precision with a creative mindset, I ensure your product
-              stands out while solving real-world problems seamlessly. My goal
-              is to deliver solutions that reflect your vision, resonate with
-              your audience, and make a lasting impression. Over the years, I’ve
-              worked on various real-life projects that tackle complex
-              challenges with smart, scalable solutions.
-            </p>
-          </section>
+          <p>
+            My role is to craft applications that are not only efficient and
+            reliable but also visually appealing and intuitive. By combining
+            technical precision with a creative mindset, I ensure your product
+            stands out while solving real-world problems seamlessly. My goal
+            is to deliver solutions that reflect your vision, resonate with
+            your audience, and make a lasting impression. Over the years, I’ve
+            worked on various real-life projects that tackle complex
+            challenges with smart, scalable solutions.
+          </p>
+        </section>
 
-          <!--
+        <!--
           - service
         -->
 
-          <section class="service">
-            <h3 class="h3 service-title">What i'm doing</h3>
+        <section class="service">
+          <h3 class="h3 service-title">What i'm doing</h3>
 
-            <ul class="service-list">
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-dev.svg"
-                    alt="Web development icon"
-                    width="40"
-                  />
-                </div>
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40" />
+              </div>
 
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web development</h4>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
 
-                  <p class="service-item-text">
-                    High-quality development of sites at the professional level.
-                  </p>
-                </div>
-              </li>
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+            </li>
 
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-app.svg"
-                    alt="mobile app icon"
-                    width="40"
-                  />
-                </div>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40" />
+              </div>
 
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Mobile apps</h4>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
 
-                  <p class="service-item-text">
-                    Professional development of applications for iOS and
-                    Android.
-                  </p>
-                </div>
-              </li>
+                <p class="service-item-text">
+                  Professional development of applications for iOS and
+                  Android.
+                </p>
+              </div>
+            </li>
 
-              <li class="service-item">
-                <div class="service-icon-box">
-                  <img
-                    src="./assets/images/icon-design.svg
-                "
-                    alt="design icon"
-                    width="40"
-                  />
-                </div>
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40" />
+              </div>
 
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web design</h4>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
 
-                  <p class="service-item-text">
-                    The most modern and high-quality design made at a
-                    professional level.
-                  </p>
-                </div>
-              </li>
+                <p class="service-item-text">
+                  The most modern and high-quality design made at a
+                  professional level.
+                </p>
+              </div>
+            </li>
 
-              <!-- <li class="service-item">
+            <!-- <li class="service-item">
 
               <div class="service-icon-box">
                 <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
@@ -328,26 +284,26 @@
               </div>
 
             </li> -->
-            </ul>
-          </section>
+          </ul>
+        </section>
 
-          <!-- Skill -->
-          <section class="skills-carousel-section">
-            <h3 class="h3 service-title">My Skills</h3>
-            <div class="skills-carousel-wrapper">
-              <div class="skills-carousel">
-                <!-- Skills groups will be generated dynamically by JavaScript -->
-              </div>
-              <!-- Indicator container - will be populated by JavaScript -->
-              <div class="skills-indicator"></div>
+        <!-- Skill -->
+        <section class="skills-carousel-section">
+          <h3 class="h3 service-title">My Skills</h3>
+          <div class="skills-carousel-wrapper">
+            <div class="skills-carousel">
+              <!-- Skills groups will be generated dynamically by JavaScript -->
             </div>
-          </section>
+            <!-- Indicator container - will be populated by JavaScript -->
+            <div class="skills-indicator"></div>
+          </div>
+        </section>
 
-          <!--
+        <!--
           - testimonials
         -->
 
-          <!-- <section class="testimonials">
+        <!-- <section class="testimonials">
 
           <h3 class="h3 testimonials-title">Testimonials</h3>
 
@@ -445,55 +401,50 @@
 
         </section> -->
 
-          <!--
+        <!--
           - testimonials modal
         -->
 
-          <div class="modal-coverer" data-m6dal-coverer>
-            <div class="overlay" data-overlay></div>
+        <div class="modal-coverer" data-m6dal-coverer>
+          <div class="overlay" data-overlay></div>
 
-            <section class="testimonials-modal">
-              <button class="modal-close-btn" data-modal-close-btn>
-                <ion-icon name="close-outline"></ion-icon>
-              </button>
+          <section class="testimonials-modal">
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
 
-              <div class="modal-img-wrapper">
-                <figure class="modal-avatar-box">
-                  <img
-                    src="./assets/images/avatar-1.png"
-                    alt="Daniel lewis"
-                    width="80"
-                    data-modal-img
-                  />
-                </figure>
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img />
+              </figure>
 
-                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
+              <img src="./assets/images/icon-quote.svg" alt="quote icon" />
+            </div>
+
+            <div class="modal-content">
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were
+                  very pleased with the work done. She has a lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum
+                  dolor sit amet, ullamcous cididt consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels
+                  dolore magnarels alia.
+                </p>
               </div>
+            </div>
+          </section>
+        </div>
 
-              <div class="modal-content">
-                <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-                <time datetime="2021-06-14">14 June, 2021</time>
-
-                <div data-modal-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were
-                    very pleased with the work done. She has a lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum
-                    dolor sit amet, ullamcous cididt consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels
-                    dolore magnarels alia.
-                  </p>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <!--
+        <!--
           - clients
         -->
 
-          <!-- <section class="clients">
+        <!-- <section class="clients">
 
           <h3 class="h3 clients-title">Clients</h3>
 
@@ -538,173 +489,161 @@
           </ul>
 
         </section> -->
-        </article>
+      </article>
 
-        <!--
+      <!--
         - #RESUME
       -->
 
-        <article class="resume" data-page="resume">
-          <header>
-            <h2 class="h2 article-title">Resume</h2>
-          </header>
+      <article class="resume" data-page="resume">
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
 
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">Education</h3>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Indian Institution of Information Technology, Ranchi
-                </h4>
+            <h3 class="h3">Education</h3>
+          </div>
 
-                <span>2022-2026</span>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                Indian Institution of Information Technology, Ranchi
+              </h4>
 
-                <!-- <p class="timeline-text">
+              <span>2022-2026</span>
+
+              <!-- <p class="timeline-text">
                 Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
                 quas molestias
                 exceptur.
               </p> -->
-              </li>
+            </li>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  St. Xavier's High School, Patna
-                </h4>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                St. Xavier's High School, Patna
+              </h4>
 
-                <span>2020 — 2022</span>
+              <span>2020 — 2022</span>
 
-                <!-- <p class="timeline-text">
+              <!-- <p class="timeline-text">
                 Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
                 omnis..
               </p> -->
-              </li>
+            </li>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  S.T. Severin's High School, Patna
-                </h4>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                S.T. Severin's High School, Patna
+              </h4>
 
-                <span>2010 — 2020</span>
+              <span>2010 — 2020</span>
 
-                <!-- <p class="timeline-text">
+              <!-- <p class="timeline-text">
                 Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
                 magni dolores
                 eos.
               </p> -->
-              </li>
-            </ol>
-          </section>
+            </li>
+          </ol>
+        </section>
 
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
-              </div>
-
-              <h3 class="h3">Experience</h3>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Coddle AI
-                  <a
-                    href="https://coddle.ai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    ><ion-icon name="link" size="large"></ion-icon
-                  ></a>
-                </h4>
+            <h3 class="h3">Experience</h3>
+          </div>
 
-                <span>October 2025 - Present</span>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                Coddle AI
+                <a href="https://coddle.ai/" target="_blank" rel="noopener noreferrer"><ion-icon name="link"
+                    size="large"></ion-icon></a>
+              </h4>
 
-                <p class="timeline-text">
-                  <strong>Serving as a Full Stack Intern</strong>,
-                  I was responsible for maintaining and developing new features
-                   across the React Native CLI mobile application, consistently
-                    enhancing its functionality and overall user experience. I 
-                    improved and debugged the in-app AI assistant to deliver more 
-                    accurate, reliable, and context-aware support for parents.
-                     Additionally, I owned the complete setup, implementation, 
-                     and maintenance of Detox end-to-end automated tests, which 
-                     significantly increased test coverage and helped prevent 
-                     regressions across the app.
-                </p>
-              </li>
+              <span>October 2025 - Present</span>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  India Accelarator
-                  <a
-                    href="https://indiaaccelerator.co/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    ><ion-icon name="link" size="large"></ion-icon
-                  ></a>
-                </h4>
+              <p class="timeline-text">
+                <strong>Serving as a Full Stack Intern</strong>,
+                I was responsible for maintaining and developing new features
+                across the React Native CLI mobile application, consistently
+                enhancing its functionality and overall user experience. I
+                improved and debugged the in-app AI assistant to deliver more
+                accurate, reliable, and context-aware support for parents.
+                Additionally, I owned the complete setup, implementation,
+                and maintenance of Detox end-to-end automated tests, which
+                significantly increased test coverage and helped prevent
+                regressions across the app.
+              </p>
+            </li>
 
-                <span>Febuary 2025 - May 2025</span>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                India Accelarator
+                <a href="https://indiaaccelerator.co/" target="_blank" rel="noopener noreferrer"><ion-icon name="link"
+                    size="large"></ion-icon></a>
+              </h4>
 
-                <p class="timeline-text">
-                  <strong>Served as a Full Stack Web and App Developer</strong>,
-                  where I led the maintenance and enhancement of existing
-                  projects by implementing new features, conducting thorough
-                  testing, and resolving complex bugs. Recognized for
-                  consistently delivering high-quality features within tight
-                  deadlines and ensuring minimal post-deployment issues.
-                </p>
-              </li>
+              <span>Febuary 2025 - May 2025</span>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Xinacle
-                  <a
-                    href="https://xinacle.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    ><ion-icon name="link" size="large"></ion-icon
-                  ></a>
-                </h4>
+              <p class="timeline-text">
+                <strong>Served as a Full Stack Web and App Developer</strong>,
+                where I led the maintenance and enhancement of existing
+                projects by implementing new features, conducting thorough
+                testing, and resolving complex bugs. Recognized for
+                consistently delivering high-quality features within tight
+                deadlines and ensuring minimal post-deployment issues.
+              </p>
+            </li>
 
-                <span>July 2024 - Febuary 2025</span>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                Xinacle
+                <a href="https://xinacle.com/" target="_blank" rel="noopener noreferrer"><ion-icon name="link"
+                    size="large"></ion-icon></a>
+              </h4>
 
-                <p class="timeline-text">
-                  Worked as a
-                  <strong>Full Stack and Mobile Developer at Xinacle</strong>,
-                  where I delivered multiple end-to-end solutions for a diverse
-                  range of clients. I was responsible for everything from UI/UX
-                  design and database schema planning to backend, frontend
-                  development, testing, and debugging. I quickly adapted to new
-                  technologies as required by client projects—often learning and
-                  applying them in record time. Known for building robust
-                  applications from scratch and consistently delivering
-                  high-quality projects ahead of deadlines with full client
-                  satisfaction.
-                </p>
-              </li>
+              <span>July 2024 - Febuary 2025</span>
 
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Shadow start-up</h4>
+              <p class="timeline-text">
+                Worked as a
+                <strong>Full Stack and Mobile Developer at Xinacle</strong>,
+                where I delivered multiple end-to-end solutions for a diverse
+                range of clients. I was responsible for everything from UI/UX
+                design and database schema planning to backend, frontend
+                development, testing, and debugging. I quickly adapted to new
+                technologies as required by client projects—often learning and
+                applying them in record time. Known for building robust
+                applications from scratch and consistently delivering
+                high-quality projects ahead of deadlines with full client
+                satisfaction.
+              </p>
+            </li>
 
-                <span>June 2024 - July 2024</span>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Shadow start-up</h4>
 
-                <p class="timeline-text">
-                  I worked in a shadow startup, contributing to the development
-                  of an MVP. This project focused on building a scalable
-                  solution for healthcare and digital marketing needs.
-                </p>
-              </li>
-            </ol>
-          </section>
+              <span>June 2024 - July 2024</span>
 
-          <!-- <section class="skill">
+              <p class="timeline-text">
+                I worked in a shadow startup, contributing to the development
+                of an MVP. This project focused on building a scalable
+                solution for healthcare and digital marketing needs.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- <section class="skill">
             <h3 class="h3 skills-title">My skills</h3>
 
             <ul class="skills-list content-card">
@@ -790,78 +729,73 @@
               </li>
             </ul>
           </section> -->
-          <li class="service-item" style="margin-top: 20px">
-            <div class="service-content-box">
-              <h4 class="h4 service-item-title">
-                <a
-                  href="./assets/Atul-Anand-Resume.pdf"
-                  style="
+        <li class="service-item" style="margin-top: 20px">
+          <div class="service-content-box">
+            <h4 class="h4 service-item-title">
+              <a href="./assets/Atul-Anand-Resume.pdf" style="
                     color: #ceb15a;
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                  "
-                  download="Atul-Anand-Resume.pdf"
-                >
-                  <ion-icon name="download" size="large"></ion-icon>Click here
-                  to download my Resume</a
-                >
-              </h4>
-            </div>
-          </li>
-        </article>
+                  " download="Atul-Anand-Resume.pdf">
+                <ion-icon name="download" size="large"></ion-icon>Click here
+                to download my Resume</a>
+            </h4>
+          </div>
+        </li>
+      </article>
 
-        <!--
+      <!--
         - #project
       -->
 
-        <article class="project" data-page="project">
-          <header>
-            <h2 class="h2 article-title">Projects</h2>
-          </header>
+      <article class="project" data-page="project">
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
 
-          <section class="projects">
-            <ul class="filter-list">
-              <li class="filter-item">
-                <button class="active" data-filter-btn>All</button>
-              </li>
+        <section class="projects">
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
 
-              <!-- <li class="filter-item">
+            <!-- <li class="filter-item">
               <button data-filter-btn>Web design</button>
             </li> -->
 
-              <!-- <li class="filter-item">
+            <!-- <li class="filter-item">
                 <button data-filter-btn>Applications</button>
               </li> -->
 
-              <li class="filter-item">
-                <button data-filter-btn>Web development</button>
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Internship</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>AI</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>
+                Select category
+              </div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="select-list">
+              <li class="select-item">
+                <button data-select-item>All</button>
               </li>
-              <li class="filter-item">
-                <button data-filter-btn>Internship</button>
-              </li>
-              <li class="filter-item">
-                <button data-filter-btn>AI</button>
-              </li>
-            </ul>
 
-            <div class="filter-select-box">
-              <button class="filter-select" data-select>
-                <div class="select-value" data-select-value>
-                  Select category
-                </div>
-
-                <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-
-              <ul class="select-list">
-                <li class="select-item">
-                  <button data-select-item>All</button>
-                </li>
-
-                <!-- <li class="select-item">
+              <!-- <li class="select-item">
                 <button data-select-item>Web design</button>
               </li>
 
@@ -869,216 +803,171 @@
                 <button data-select-item>Applications</button>
               </li> -->
 
-                <li class="select-item">
-                  <button data-select-item>Web development</button>
-                </li>
-                <li class="select-item">
-                  <button data-select-item>Internship</button>
-                </li>
-                <li class="select-item">
-                  <button data-select-item>AI</button>
-                </li>
-              </ul>
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>Internship</button>
+              </li>
+              <li class="select-item">
+                <button data-select-item>AI</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="project-list" id="project-list"></ul>
+        </section>
+      </article>
+
+      <!-- Project Detail -->
+      <article class="project-details" data-page="project-details" style="display: none">
+        <header>
+          <button class="back-btn" onclick="showProjectList()">
+            <ion-icon name="arrow-back"></ion-icon> Back to Projects
+          </button>
+          <h2 class="h2 detail-title" id="project-detail-title"></h2>
+        </header>
+
+        <section class="project-detail-content">
+          <div class="main-div">
+            <figure class="project-detail-img">
+              <img id="project-detail-image" src="" alt="" loading="lazy" />
+            </figure>
+            <div class="warning-box">
+              <p id="warning-text"></p>
             </div>
 
-            <ul class="project-list" id="project-list"></ul>
-          </section>
-        </article>
+            <div class="project-info">
+              <ul class="tech-stack-list" id="project-tech-stack"></ul>
+              <div class="project-text" id="project-detail-description"></div>
 
-        <!-- Project Detail -->
-        <article
-          class="project-details"
-          data-page="project-details"
-          style="display: none"
-        >
-          <header>
-            <button class="back-btn" onclick="showProjectList()">
-              <ion-icon name="arrow-back"></ion-icon> Back to Projects
-            </button>
-            <h2 class="h2 detail-title" id="project-detail-title"></h2>
-          </header>
-
-          <section class="project-detail-content">
-            <div class="main-div">
-              <figure class="project-detail-img">
-                <img id="project-detail-image" src="" alt="" loading="lazy" />
-              </figure>
-              <div class="warning-box">
-                <p id="warning-text"></p>
-              </div>
-
-              <div class="project-info">
-                <ul class="tech-stack-list" id="project-tech-stack"></ul>
-                <div class="project-text" id="project-detail-description"></div>
-
-                <div class="project-links">
-                  <a
-                    id="project-github-link"
-                    href="#"
-                    target="_blank"
-                    class="project-link"
-                    style="display: none"
-                  >
-                    <ion-icon name="logo-github"></ion-icon> GitHub
-                  </a>
-                  <a
-                    id="project-live-link"
-                    href="#"
-                    target="_blank"
-                    class="project-link"
-                    style="display: none"
-                  >
-                    <ion-icon name="globe-outline"></ion-icon> Live Demo
-                  </a>
-                </div>
+              <div class="project-links">
+                <a id="project-github-link" href="#" target="_blank" class="project-link" style="display: none">
+                  <ion-icon name="logo-github"></ion-icon> GitHub
+                </a>
+                <a id="project-live-link" href="#" target="_blank" class="project-link" style="display: none">
+                  <ion-icon name="globe-outline"></ion-icon> Live Demo
+                </a>
               </div>
             </div>
-          </section>
-        </article>
+          </div>
+        </section>
+      </article>
 
-        <!--
+      <!--
         - #BLOG
       -->
 
-        <article class="blog" data-page="blog">
-          <header>
-            <h2 class="h2 article-title">Blog</h2>
-          </header>
+      <article class="blog" data-page="blog">
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
 
-          <section class="blog-posts">
-            <ul class="blog-posts-list">
-              <li class="blog-post-item">
-                <a
-                  target="_blank"
-                  href="https://medium.com/@atulj10unofficial/copy-that-mastering-shallow-and-deep-copy-in-javascript-8d6bedbe242f"
-                >
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-1.png"
-                      alt="Shallow vs Deep Copy in JavaScript"
-                      loading="lazy"
-                    />
-                  </figure>
+        <section class="blog-posts">
+          <ul class="blog-posts-list">
+            <li class="blog-post-item">
+              <a target="_blank"
+                href="https://medium.com/@atulj10unofficial/copy-that-mastering-shallow-and-deep-copy-in-javascript-8d6bedbe242f">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.png" alt="Shallow vs Deep Copy in JavaScript" loading="lazy" />
+                </figure>
 
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Programming Fundamentals</p>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Programming Fundamentals</p>
 
-                      <span class="dot"></span>
+                    <span class="dot"></span>
 
-                      <time datetime="2022-02-23">July 19, 2025</time>
-                    </div>
-
-                    <h3 class="h3 blog-item-title">
-                      Shallow vs Deep Copy in JavaScript: A Complete Guide with
-                      Examples
-                    </h3>
-
-                    <p class="blog-text">
-                      Master the difference between shallow and deep copy in
-                      JavaScript with examples to write more reliable, bug-free
-                      code.
-                    </p>
+                    <time datetime="2022-02-23">July 19, 2025</time>
                   </div>
-                </a>
-              </li>
-              <li class="blog-post-item">
-                <a
-                  target="_blank"
-                  href="https://medium.com/@atulj10unofficial/clean-architecture-in-react-react-native-concepts-history-and-practical-guides-df15cc243e8c"
-                >
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-2.png"
-                      alt="Clean Architecture"
-                      loading="lazy"
-                    />
-                  </figure>
 
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">React JS</p>
+                  <h3 class="h3 blog-item-title">
+                    Shallow vs Deep Copy in JavaScript: A Complete Guide with
+                    Examples
+                  </h3>
 
-                      <span class="dot"></span>
+                  <p class="blog-text">
+                    Master the difference between shallow and deep copy in
+                    JavaScript with examples to write more reliable, bug-free
+                    code.
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="blog-post-item">
+              <a target="_blank"
+                href="https://medium.com/@atulj10unofficial/clean-architecture-in-react-react-native-concepts-history-and-practical-guides-df15cc243e8c">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.png" alt="Clean Architecture" loading="lazy" />
+                </figure>
 
-                      <time datetime="2022-02-23">July 25, 2025</time>
-                    </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">React JS</p>
 
-                    <h3 class="h3 blog-item-title">
-                      Clean Architecture in React & React Native: Concepts,
-                      History, and Practical Guides
-                    </h3>
+                    <span class="dot"></span>
 
-                    <p class="blog-text">
-                      A concise guide to understanding and implementing clean
-                      architecture in React and React Native, highlighting key
-                      patterns, principles, and practical resources.
-                    </p>
+                    <time datetime="2022-02-23">July 25, 2025</time>
                   </div>
-                </a>
-              </li>
-              <li class="blog-post-item">
-                <a
-                  target="_blank"
-                  href="https://medium.com/@atulj10unofficial/clean-architecture-in-react-react-native-concepts-history-and-practical-guides-df15cc243e8c"
-                >
-                  <figure class="blog-banner-box">
-                    <img
-                      src="./assets/images/blog-3.webp"
-                      alt="Clean Architecture"
-                      loading="lazy"
-                    />
-                  </figure>
 
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <p class="blog-category">Next JS</p>
+                  <h3 class="h3 blog-item-title">
+                    Clean Architecture in React & React Native: Concepts,
+                    History, and Practical Guides
+                  </h3>
 
-                      <span class="dot"></span>
+                  <p class="blog-text">
+                    A concise guide to understanding and implementing clean
+                    architecture in React and React Native, highlighting key
+                    patterns, principles, and practical resources.
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="blog-post-item">
+              <a target="_blank"
+                href="https://medium.com/@atulj10unofficial/clean-architecture-in-react-react-native-concepts-history-and-practical-guides-df15cc243e8c">
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.webp" alt="Clean Architecture" loading="lazy" />
+                </figure>
 
-                      <time datetime="2022-02-23">August 9, 2025</time>
-                    </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Next JS</p>
 
-                    <h3 class="h3 blog-item-title">
-                      Effortless File Uploads in Next.js Directly to Public
-                      Folder (No Cloud Required)
-                    </h3>
+                    <span class="dot"></span>
 
-                    <p class="blog-text">
-                      A simple, cost-effective way to handle file uploads in
-                      Next.js by saving them directly to the /public folder
-                      using Server Actions—perfect for small projects, MVPs, and
-                      self-hosted apps without relying on cloud storage.
-                    </p>
+                    <time datetime="2022-02-23">August 9, 2025</time>
                   </div>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </article>
 
-        <!--
+                  <h3 class="h3 blog-item-title">
+                    Effortless File Uploads in Next.js Directly to Public
+                    Folder (No Cloud Required)
+                  </h3>
+
+                  <p class="blog-text">
+                    A simple, cost-effective way to handle file uploads in
+                    Next.js by saving them directly to the /public folder
+                    using Server Actions—perfect for small projects, MVPs, and
+                    self-hosted apps without relying on cloud storage.
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!--
         - #CONTACT
       -->
 
-        <article class="contact" data-page="contact">
-          <header>
-            <h2 class="h2 article-title">Contact</h2>
-          </header>
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
 
-          <section class="mapbox" data-mapbox>
-            <figure>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117223.77996815203!2d85.32132625000001!3d23.343204800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1735641293163!5m2!1sen!2sin"
-                width="400"
-                height="300"
-                loading="lazy"
-              ></iframe>
-            </figure>
-          </section>
-
-          <section class="contact-form">
-            <h3 class="h3 form-title">Contact Form</h3>
+        <section class="contact-form">
+          <!-- <h3 class="h3 form-title">Contact Form</h3>
 
             <form action="#" class="form" data-form>
               <div class="input-wrapper">
@@ -1113,27 +1002,68 @@
                 <ion-icon name="paper-plane"></ion-icon>
                 <span>Send Message</span>
               </button>
-            </form>
-          </section>
-        </article>
-      </div>
-    </main>
+            </form> -->
+          <ul class="input-wrapper">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
 
-    <!--
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:atulanandj10@gmail.com" class="contact-link">atulanandj10@gmail.com</a>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+12133522795" class="contact-link">+91 6205769890</a>
+              </div>
+            </li>
+
+            <!-- <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Ranchi Jharkhand, India</address>
+            </div>
+          </li> -->
+        </section>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117223.77996815203!2d85.32132625000001!3d23.343204800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc09d49d6899f43e!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1735641293163!5m2!1sen!2sin"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        
+      </article>
+    </div>
+  </main>
+
+  <!--
     - custom js link
   -->
-    <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 
-    <!--
+  <!--
     - ionicon link
   -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-  </body>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>
