@@ -294,7 +294,7 @@ const projects = [
     category: "Internship",
     image: "./assets/images/project-12.png",
     github: null,
-    live: null,
+    live: "https://youtu.be/3MdcjX-kVCI?si=TDQpUt5yjhKuOjxW",
     issue:
       "Due to the project's confidentiality, I am unable to share the live hosted link and the GitHub repo at this instance.",
   },
