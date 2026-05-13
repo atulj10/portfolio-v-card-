@@ -1,98 +1,100 @@
 "use strict";
 
-// Skill data
-const skills = [
-  { name: "React", icon: "logo-react" },
-  { name: "Laravel", icon: "logo-laravel" },
-  { name: "Node.js", icon: "logo-nodejs" },
-  { name: "GitHub", icon: "logo-github" },
-  { name: "Git", icon: "git-branch-outline" },
-  { name: "SQL", icon: "server-outline" },
-  { name: "Firebase", icon: "logo-firebase" },
-  { name: "Clerk", icon: "code" },
-  { name: "HTML", icon: "logo-html5" },
-  { name: "C", icon: "code" },
-  { name: "C++", icon: "code" },
-  { name: "CSS", icon: "logo-css3" },
-  { name: "JavaScript", icon: "logo-javascript" },
-  { name: "Python", icon: "logo-python" },
-  { name: "CLI", icon: "terminal-outline" },
-  { name: "Security", icon: "shield-checkmark-outline" },
+const skillCategories = [
+  {
+    name: "Frontend",
+    skills: [
+      { name: "React", icon: "logo-react", level: 90 },
+      { name: "JavaScript", icon: "logo-javascript", level: 85 },
+      { name: "HTML", icon: "logo-html5", level: 85 },
+      { name: "CSS", icon: "logo-css3", level: 80 },
+    ],
+  },
+  {
+    name: "Backend",
+    skills: [
+      { name: "Node.js", icon: "server-outline", level: 75 },
+      { name: "Laravel", icon: "code-slash-outline", level: 70 },
+      { name: "SQL", icon: "grid-outline", level: 75 },
+      { name: "Python", icon: "logo-python", level: 65 },
+    ],
+  },
+  {
+    name: "Languages",
+    skills: [
+      { name: "C", icon: "code-outline", level: 60 },
+      { name: "C++", icon: "code-outline", level: 60 },
+      { name: "Clerk", icon: "shield-checkmark-outline", level: 55 },
+      { name: "Security", icon: "lock-closed-outline", level: 60 },
+    ],
+  },
+  {
+    name: "Tools & Platforms",
+    skills: [
+      { name: "GitHub", icon: "logo-github", level: 85 },
+      { name: "Git", icon: "git-branch-outline", level: 80 },
+      { name: "Firebase", icon: "logo-firebase", level: 65 },
+      { name: "CLI", icon: "terminal-outline", level: 70 },
+    ],
+  },
 ];
 
-// DOM elements
 const carousel = document.querySelector(".skills-carousel");
 const indicatorContainer = document.querySelector(".skills-indicator");
 
-// Configuration
-const config = {
-  small: { cols: 2, rows: 3, breakpoint: 480 }, // 6 skills per group
-  medium: { cols: 3, rows: 3, breakpoint: 768 }, // 9 skills per group
-  large: { cols: 5, rows: 2, breakpoint: 992 }, // 10 skills per group
-};
-
 let currentIndex = 0;
 let autoScrollInterval;
-let groupCount = 0;
 let resizeTimeout;
 let isScrolling = false;
 
-// Initialize carousel
 function initCarousel() {
-  // Clear existing content
   carousel.innerHTML = "";
   indicatorContainer.innerHTML = "";
 
-  // Determine current screen size and group size
-  const screenWidth = window.innerWidth;
-  let groupSize;
-
-  if (screenWidth >= config.large.breakpoint) {
-    groupSize = config.large.cols * config.large.rows;
-  } else if (screenWidth >= config.medium.breakpoint) {
-    groupSize = config.medium.cols * config.medium.rows;
-  } else {
-    groupSize = config.small.cols * config.small.rows;
-  }
-
-  // Create skill groups
-  groupCount = Math.ceil(skills.length / groupSize);
-
-  for (let i = 0; i < groupCount; i++) {
+  skillCategories.forEach((category, idx) => {
     const group = document.createElement("div");
     group.className = "skills-group";
 
-    const skillsInGroup = skills.slice(i * groupSize, (i + 1) * groupSize);
+    const header = document.createElement("div");
+    header.className = "skills-category-header";
+    header.innerHTML = `<span class="skills-category-name">${category.name}</span>`;
+    group.appendChild(header);
 
-    skillsInGroup.forEach((skill) => {
+    const skillsGrid = document.createElement("div");
+    skillsGrid.className = "skills-grid";
+
+    category.skills.forEach((skill) => {
       const card = document.createElement("div");
       card.className = "skill-card";
       card.innerHTML = `
-        <ion-icon name="${skill.icon}"></ion-icon>
-        <p>${skill.name}</p>
+        <div class="skill-card-icon">
+          <ion-icon name="${skill.icon}"></ion-icon>
+        </div>
+        <p class="skill-card-name">${skill.name}</p>
+        <div class="skill-level-bar">
+          <div class="skill-level-fill" style="width: ${skill.level}%"></div>
+        </div>
+        <span class="skill-level-text">${skill.level}%</span>
       `;
-      group.appendChild(card);
+      skillsGrid.appendChild(card);
     });
 
+    group.appendChild(skillsGrid);
     carousel.appendChild(group);
 
-    // Create indicator
     const indicator = document.createElement("span");
     indicator.className = "indicator-line";
-    if (i === 0) indicator.classList.add("active");
+    if (idx === 0) indicator.classList.add("active");
     indicatorContainer.appendChild(indicator);
-  }
+  });
 
-  // Reset to first group when reinitializing
   currentIndex = 0;
   carousel.scrollTo({ top: 0, behavior: "auto" });
-
-  // Setup auto-scroll
   setupAutoScroll();
 }
 
-// Setup auto-scroll functionality
 function setupAutoScroll() {
+  const groupCount = skillCategories.length;
   if (autoScrollInterval) clearInterval(autoScrollInterval);
 
   autoScrollInterval = setInterval(() => {
@@ -100,50 +102,31 @@ function setupAutoScroll() {
       currentIndex = (currentIndex + 1) % groupCount;
       scrollToGroup(currentIndex);
     }
-  }, 3000);
+  }, 4000);
 
-  // Pause on hover
-  carousel.addEventListener("mouseenter", () => {
-    clearInterval(autoScrollInterval);
-  });
-
-  // Resume on mouse leave
+  carousel.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
   carousel.addEventListener("mouseleave", () => {
     autoScrollInterval = setInterval(() => {
       if (!isScrolling) {
         currentIndex = (currentIndex + 1) % groupCount;
         scrollToGroup(currentIndex);
       }
-    }, 3000);
+    }, 4000);
   });
 
-  // Manual scroll updates indicators
   carousel.addEventListener("scroll", handleScroll);
 }
 
 function scrollToGroup(index) {
   isScrolling = true;
-  const scrollAmount = index * carousel.clientHeight;
-  carousel.scrollTo({
-    top: scrollAmount,
-    behavior: "smooth",
-  });
-
+  carousel.scrollTo({ top: index * carousel.clientHeight, behavior: "smooth" });
   updateIndicators();
-
-  // Reset scrolling flag after animation completes
-  setTimeout(() => {
-    isScrolling = false;
-  }, 1000);
+  setTimeout(() => { isScrolling = false; }, 800);
 }
 
 function handleScroll() {
   if (isScrolling) return;
-
-  const scrollPosition = carousel.scrollTop;
-  const groupHeight = carousel.clientHeight;
-  const newIndex = Math.round(scrollPosition / groupHeight);
-
+  const newIndex = Math.round(carousel.scrollTop / carousel.clientHeight);
   if (newIndex !== currentIndex) {
     currentIndex = newIndex;
     updateIndicators();
@@ -151,31 +134,17 @@ function handleScroll() {
 }
 
 function updateIndicators() {
-  const indicators = document.querySelectorAll(".indicator-line");
-  indicators.forEach((line, i) => {
+  document.querySelectorAll(".indicator-line").forEach((line, i) => {
     line.classList.toggle("active", i === currentIndex);
   });
 }
 
-// Initialize on load
 document.addEventListener("DOMContentLoaded", initCarousel);
 
-// Debounced resize handler
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    initCarousel();
-  }, 200);
+  resizeTimeout = setTimeout(initCarousel, 200);
 });
-
-// Pause when tab is not visible
-// document.addEventListener("visibilitychange", () => {
-//   if (document.hidden) {
-//     clearInterval(autoScrollInterval);
-//   } else {
-//     setupAutoScroll();
-//   }
-// });
 
 //projects
 const projects = [
