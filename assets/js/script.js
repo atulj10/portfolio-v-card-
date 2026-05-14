@@ -2,56 +2,108 @@
 
 const skillCategories = [
   {
-    name: "Frontend",
-    skills: [
-      { name: "React", icon: "logo-react", level: 90 },
-      { name: "JavaScript", icon: "logo-javascript", level: 85 },
-      { name: "HTML", icon: "logo-html5", level: 85 },
-      { name: "CSS", icon: "logo-css3", level: 80 },
-    ],
-  },
-  {
-    name: "Backend",
-    skills: [
-      { name: "Node.js", icon: "server-outline", level: 75 },
-      { name: "Laravel", icon: "code-slash-outline", level: 70 },
-      { name: "SQL", icon: "grid-outline", level: 75 },
-      { name: "Python", icon: "logo-python", level: 65 },
-    ],
-  },
-  {
     name: "Languages",
     skills: [
-      { name: "C", icon: "code-outline", level: 60 },
-      { name: "C++", icon: "code-outline", level: 60 },
-      { name: "Clerk", icon: "shield-checkmark-outline", level: 55 },
-      { name: "Security", icon: "lock-closed-outline", level: 60 },
+      { name: "JavaScript", icon: "logo-javascript", level: 90 },
+      { name: "TypeScript", icon: "logo-javascript", level: 80 },
+      { name: "Python", icon: "logo-python", level: 75 },
+      { name: "SQL", icon: "grid-outline", level: 80 },
     ],
   },
   {
-    name: "Tools & Platforms",
+    name: "C & Systems",
     skills: [
-      { name: "GitHub", icon: "logo-github", level: 85 },
-      { name: "Git", icon: "git-branch-outline", level: 80 },
-      { name: "Firebase", icon: "logo-firebase", level: 65 },
-      { name: "CLI", icon: "terminal-outline", level: 70 },
+      { name: "C++", icon: "code-outline", level: 65 },
+      { name: "C", icon: "code-outline", level: 65 },
+      { name: "PHP", icon: "code-outline", level: 60 },
+    ],
+  },
+  {
+    name: "Frontend Core",
+    skills: [
+      { name: "React", icon: "logo-react", level: 90 },
+      { name: "Next.js", icon: "logo-react", level: 85 },
+      { name: "Redux", icon: "logo-javascript", level: 80 },
+      { name: "Context API", icon: "logo-javascript", level: 80 },
+      { name: "Shadcn/UI", icon: "logo-css3", level: 85 },
+      { name: "Tailwind CSS", icon: "logo-css3", level: 85 },
+    ],
+  },
+  {
+    name: "UI Libraries",
+    skills: [
+      { name: "MUI", icon: "logo-css3", level: 75 },
+      { name: "Ant Design", icon: "logo-css3", level: 70 },
+      { name: "Bootstrap", icon: "logo-css3", level: 75 },
+      { name: "Sass", icon: "logo-css3", level: 70 },
+    ],
+  },
+  {
+    name: "Backend & Mobile",
+    skills: [
+      { name: "Node.js", icon: "server-outline", level: 80 },
+      { name: "Express.js", icon: "server-outline", level: 80 },
+      { name: "Laravel", icon: "code-slash-outline", level: 75 },
+      { name: "React Native", icon: "logo-react", level: 80 },
+    ],
+  },
+  {
+    name: "ORM & Databases",
+    skills: [
+      { name: "Prisma", icon: "server-outline", level: 80 },
+      { name: "Mongoose", icon: "server-outline", level: 75 },
+      { name: "MySQL", icon: "grid-outline", level: 75 },
+      { name: "PostgreSQL", icon: "grid-outline", level: 75 },
+      { name: "MongoDB", icon: "grid-outline", level: 80 },
+    ],
+  },
+  {
+    name: "Cloud & Services",
+    skills: [
+      { name: "Firebase", icon: "logo-firebase", level: 75 },
+      { name: "Firestore", icon: "logo-firebase", level: 70 },
+      { name: "Supabase", icon: "server-outline", level: 65 },
+      { name: "Cloudinary", icon: "cloud-outline", level: 70 },
+    ],
+  },
+  {
+    name: "Auth & Security",
+    skills: [
+      { name: "Clerk", icon: "shield-checkmark-outline", level: 75 },
+      { name: "NextAuth", icon: "shield-checkmark-outline", level: 75 },
+      { name: "JWT", icon: "lock-closed-outline", level: 80 },
+      { name: "Bcrypt", icon: "lock-closed-outline", level: 75 },
+    ],
+  },
+  {
+    name: "Tools",
+    skills: [
+      { name: "Git", icon: "git-branch-outline", level: 85 },
+      { name: "GitHub", icon: "logo-github", level: 90 },
+      { name: "Postman", icon: "code-outline", level: 80 },
+    ],
+  },
+  {
+    name: "Testing & AI",
+    skills: [
+      { name: "Socket.io", icon: "code-outline", level: 65 },
+      { name: "LangChain", icon: "code-outline", level: 70 },
+      { name: "Detox", icon: "code-outline", level: 75 },
+      { name: "Jest", icon: "code-outline", level: 75 },
     ],
   },
 ];
 
 const carousel = document.querySelector(".skills-carousel");
-const indicatorContainer = document.querySelector(".skills-indicator");
 
-let currentIndex = 0;
 let autoScrollInterval;
 let resizeTimeout;
 let isScrolling = false;
 
 function initCarousel() {
   carousel.innerHTML = "";
-  indicatorContainer.innerHTML = "";
 
-  skillCategories.forEach((category, idx) => {
+  skillCategories.forEach((category) => {
     const group = document.createElement("div");
     group.className = "skills-group";
 
@@ -81,14 +133,8 @@ function initCarousel() {
 
     group.appendChild(skillsGrid);
     carousel.appendChild(group);
-
-    const indicator = document.createElement("span");
-    indicator.className = "indicator-line";
-    if (idx === 0) indicator.classList.add("active");
-    indicatorContainer.appendChild(indicator);
   });
 
-  currentIndex = 0;
   carousel.scrollTo({ top: 0, behavior: "auto" });
   setupAutoScroll();
 }
@@ -97,46 +143,24 @@ function setupAutoScroll() {
   const groupCount = skillCategories.length;
   if (autoScrollInterval) clearInterval(autoScrollInterval);
 
-  autoScrollInterval = setInterval(() => {
-    if (!isScrolling && document.hasFocus()) {
-      currentIndex = (currentIndex + 1) % groupCount;
-      scrollToGroup(currentIndex);
-    }
-  }, 4000);
-
-  carousel.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
-  carousel.addEventListener("mouseleave", () => {
+  const startInterval = () => {
     autoScrollInterval = setInterval(() => {
-      if (!isScrolling) {
-        currentIndex = (currentIndex + 1) % groupCount;
-        scrollToGroup(currentIndex);
+      if (!isScrolling && document.hasFocus()) {
+        const currentIndex = Math.round(carousel.scrollTop / carousel.clientHeight);
+        scrollToGroup((currentIndex + 1) % groupCount);
       }
-    }, 4000);
-  });
+    }, 200);
+  };
 
-  carousel.addEventListener("scroll", handleScroll);
+  startInterval();
+  carousel.addEventListener("mouseenter", () => clearInterval(autoScrollInterval));
+  carousel.addEventListener("mouseleave", startInterval);
 }
 
 function scrollToGroup(index) {
   isScrolling = true;
   carousel.scrollTo({ top: index * carousel.clientHeight, behavior: "smooth" });
-  updateIndicators();
   setTimeout(() => { isScrolling = false; }, 800);
-}
-
-function handleScroll() {
-  if (isScrolling) return;
-  const newIndex = Math.round(carousel.scrollTop / carousel.clientHeight);
-  if (newIndex !== currentIndex) {
-    currentIndex = newIndex;
-    updateIndicators();
-  }
-}
-
-function updateIndicators() {
-  document.querySelectorAll(".indicator-line").forEach((line, i) => {
-    line.classList.toggle("active", i === currentIndex);
-  });
 }
 
 document.addEventListener("DOMContentLoaded", initCarousel);

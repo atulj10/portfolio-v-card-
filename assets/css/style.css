@@ -657,7 +657,7 @@ main {
 
 /* Skills */
 .skills-carousel-section {
-  padding: 4rem 1rem 2rem;
+  padding: 4rem 1rem 0;
   padding-top: 0;
   font-family: var(--ff-poppins);
   color: var(--white-1);
@@ -675,7 +675,7 @@ main {
 
 .skills-carousel {
   height: 320px;
-  overflow-y: hidden;
+  overflow-y: auto;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;
   width: 100%;
@@ -770,37 +770,14 @@ main {
   color: var(--light-gray-70);
 }
 
-/* Group Indicator */
-.skills-indicator {
-  position: absolute;
-  top: 50%;
-  right: -20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.indicator-line {
-  width: 6px;
-  height: 30px;
-  border-radius: 3px;
-  background: var(--light-gray-70);
-  transition: background var(--transition-1);
-}
-
-.indicator-line.active {
-  background: var(--orange-yellow-crayola);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .skills-carousel {
-    height: 380px;
+    height: 420px;
   }
 
   .skills-group {
-    height: 380px;
+    height: 420px;
   }
 
   .skills-grid {
@@ -812,14 +789,6 @@ main {
     font-size: 1.6rem;
   }
 
-  .skills-indicator {
-    right: -12px;
-    gap: 6px;
-  }
-
-  .indicator-line {
-    height: 20px;
-  }
 }
 
 @media (max-width: 480px) {
