@@ -9,6 +9,7 @@ import ProjectDetail from "./components/ProjectDetail";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import FallingStars from "./components/FallingStars";
+import SplashScreen from "./components/SplashScreen";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -35,17 +36,19 @@ export default function App() {
     <>
       <ScrollToTop />
       <FallingStars />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<About />} />
-          <Route path="resume" element={<Resume />} />
-          <Route path="project" element={<Projects />} />
-          <Route path="project/:id" element={<ProjectDetail />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<About />} />
-        </Route>
-      </Routes>
+      <SplashScreen>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<About />} />
+            <Route path="resume" element={<Resume />} />
+            <Route path="project" element={<Projects />} />
+            <Route path="project/:id" element={<ProjectDetail />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<About />} />
+          </Route>
+        </Routes>
+      </SplashScreen>
     </>
   );
 }
