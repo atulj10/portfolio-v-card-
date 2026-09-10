@@ -2705,3 +2705,47 @@ textarea.form-input::-webkit-resizer {
     opacity: 0;
   }
 }
+
+/* Moon */
+.moon {
+  position: fixed;
+  top: 80px;
+  right: 100px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+  border-radius: 50%;
+  box-shadow:
+    0 0 40px 10px rgba(255, 255, 255, 0.15),
+    0 0 80px 20px rgba(255, 255, 255, 0.08),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.moon-crater {
+  position: absolute;
+  background: rgba(200, 200, 200, 0.3);
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.moon-crater--1 {
+  width: 15px;
+  height: 15px;
+  top: 20px;
+  left: 15px;
+}
+
+.moon-crater--2 {
+  width: 20px;
+  height: 20px;
+  top: 45px;
+  left: 40px;
+}
+
+.moon-crater--3 {
+  width: 12px;
+  height: 12px;
+  top: 55px;
+  left: 20px;
+}

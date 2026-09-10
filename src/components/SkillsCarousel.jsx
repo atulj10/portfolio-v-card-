@@ -79,13 +79,6 @@ export default function SkillsCarousel() {
                       <ion-icon name={skill.icon}></ion-icon>
                     </div>
                     <p className="skill-card-name">{skill.name}</p>
-                    <div className="skill-level-bar">
-                      <div
-                        className="skill-level-fill"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                    <span className="skill-level-text">{skill.level}%</span>
                   </motion.div>
                 ))}
               </div>
