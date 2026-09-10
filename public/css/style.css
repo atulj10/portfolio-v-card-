@@ -2666,10 +2666,8 @@ textarea.form-input::-webkit-resizer {
   overflow: hidden;
 }
 
-.shooting-stars span {
+.shooting-stars span.shooting-star {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 4px;
   height: 4px;
   background: hsl(45, 100%, 72%);
@@ -2678,11 +2676,10 @@ textarea.form-input::-webkit-resizer {
     0 0 0 4px hsla(45, 100%, 72%, 0.1),
     0 0 0 8px hsla(45, 100%, 72%, 0.1),
     0 0 20px hsla(45, 100%, 72%, 0.1);
-  opacity: 0;
-  animation: shootingStar 10s linear infinite;
+  animation: shootingStarMove var(--duration, 1.2s) linear forwards;
 }
 
-.shooting-stars span::before {
+.shooting-stars span.shooting-star::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -2692,59 +2689,19 @@ textarea.form-input::-webkit-resizer {
   background: linear-gradient(90deg, hsl(45, 100%, 72%), transparent);
 }
 
-.shooting-stars span:nth-child(1) {
-  top: 0;
-  right: 0;
-  left: initial;
-  animation-delay: 0s;
-}
-
-.shooting-stars span:nth-child(2) {
-  top: 0;
-  right: 150px;
-  left: initial;
-  animation-delay: 2s;
-}
-
-.shooting-stars span:nth-child(3) {
-  top: 120px;
-  right: 0;
-  left: initial;
-  animation-delay: 4s;
-}
-
-.shooting-stars span:nth-child(4) {
-  top: 0;
-  right: 320px;
-  left: initial;
-  animation-delay: 6s;
-}
-
-.shooting-stars span:nth-child(5) {
-  top: 240px;
-  right: 40px;
-  left: initial;
-  animation-delay: 8s;
-}
-
-@keyframes shootingStar {
+@keyframes shootingStarMove {
   0% {
     transform: rotate(315deg) translateX(0);
     opacity: 0;
   }
-  2% {
+  6% {
     opacity: 1;
   }
-  10% {
-    transform: rotate(315deg) translateX(-850px);
+  85% {
     opacity: 1;
-  }
-  12% {
-    transform: rotate(315deg) translateX(-1000px);
-    opacity: 0;
   }
   100% {
-    transform: rotate(315deg) translateX(-1000px);
+    transform: rotate(315deg) translateX(calc(-1 * var(--distance, 800px)));
     opacity: 0;
   }
 }
