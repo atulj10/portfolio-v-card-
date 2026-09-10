@@ -9,6 +9,7 @@ import ProjectDetail from "./components/ProjectDetail";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import FallingStars from "./components/FallingStars";
+import ShootingStars from "./components/ShootingStars";
 import SplashScreen from "./components/SplashScreen";
 
 function ScrollToTop() {
@@ -36,6 +37,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <FallingStars />
+      <ShootingStars />
       <SplashScreen>
         <Routes>
           <Route path="/" element={<Layout />}>

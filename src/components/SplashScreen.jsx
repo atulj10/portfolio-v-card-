@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import data from "../data/data.json";
 
-const TEXT = "Welcome \n Hi I'm Atul ";
+const TEXT = "Hi \n I'm Atul ";
 const TYPE_DURATION = 2000;
 const HOLD = 500;
 const FADE = 800;
