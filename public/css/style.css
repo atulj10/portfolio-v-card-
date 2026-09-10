@@ -1357,7 +1357,6 @@ main {
   display: flex;
   flex-direction: column;
   font-family: var(--ff-poppins);
-  background: var(--eerie-black-1);
   color: var(--white-2);
 }
 
@@ -2594,4 +2593,64 @@ textarea.form-input::-webkit-resizer {
   100% {
     opacity: 0;
   }
+}
+
+/* Glowing Neon Balls */
+.neon-orbit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  animation: orbit-spin 8s linear infinite;
+  pointer-events: none;
+}
+
+.neon-ball {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.neon-ball--pink {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.5) 0%, rgba(255, 105, 180, 0.15) 40%, transparent 70%);
+  box-shadow:
+    0 0 80px rgba(255, 105, 180, 0.6),
+    0 0 160px rgba(255, 105, 180, 0.3),
+    0 0 240px rgba(255, 105, 180, 0.15);
+  animation: neon-pulse-pink 4s ease-in-out infinite alternate;
+}
+
+.neon-ball--blue {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  background: radial-gradient(circle, rgba(50, 130, 255, 0.5) 0%, rgba(50, 130, 255, 0.15) 40%, transparent 70%);
+  box-shadow:
+    0 0 80px rgba(50, 130, 255, 0.6),
+    0 0 160px rgba(50, 130, 255, 0.3),
+    0 0 240px rgba(50, 130, 255, 0.15);
+  animation: neon-pulse-blue 5s ease-in-out infinite alternate;
+}
+
+@keyframes orbit-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes neon-pulse-pink {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes neon-pulse-blue {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
 }
