@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import data from "../data/data.json";
 
 export default function Projects() {
@@ -20,11 +21,20 @@ export default function Projects() {
 
   return (
     <article className="project" data-page="project">
-      <header>
+      <motion.header
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="h2 article-title">Projects</h2>
-      </header>
+      </motion.header>
 
-      <section className="projects">
+      <motion.section
+        className="projects"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+      >
         <ul className="filter-list">
           {filterCategories.map((category) => (
             <li className="filter-item" key={category}>
@@ -61,39 +71,46 @@ export default function Projects() {
         </div>
 
         <ul className="project-list" id="project-list">
-          {filteredProjects.map((project) => {
-            const originalIndex = projects.indexOf(project);
-            return (
-              <li
-                className="project-item active"
-                data-filter-item
-                data-category={project.category.toLowerCase()}
-                key={project.title}
-              >
-                <a
-                  className="project-container"
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate(`/project/${originalIndex}`);
-                  }}
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, i) => {
+              const originalIndex = projects.indexOf(project);
+              return (
+                <motion.li
+                  layout
+                  className="project-item active"
+                  data-filter-item
+                  data-category={project.category.toLowerCase()}
+                  key={project.title}
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
                 >
-                  <figure className="project-img">
-                    <img
-                      style={{ objectFit: "cover" }}
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                    />
-                  </figure>
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-category">{project.category}</p>
-                </a>
-              </li>
-            );
-          })}
+                  <a
+                    className="project-container"
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(`/project/${originalIndex}`);
+                    }}
+                  >
+                    <figure className="project-img">
+                      <img
+                        style={{ objectFit: "cover" }}
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                      />
+                    </figure>
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-category">{project.category}</p>
+                  </a>
+                </motion.li>
+              );
+            })}
+          </AnimatePresence>
         </ul>
-      </section>
+      </motion.section>
     </article>
   );
 }

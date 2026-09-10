@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import data from "../data/data.json";
 
 export default function Sidebar() {
@@ -6,18 +7,33 @@ export default function Sidebar() {
   const { personal, contacts } = data;
 
   return (
-    <aside className={`sidebar${showContacts ? " active" : ""}`}>
+    <motion.aside
+      className={`sidebar${showContacts ? " active" : ""}`}
+      initial={{ opacity: 0, y: -24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="sidebar-info">
-        <figure className="avatar-box">
+        <motion.figure
+          className="avatar-box"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <img src={personal.avatar} alt={personal.name} width="80" />
-        </figure>
+        </motion.figure>
 
-        <div className="info-content">
+        <motion.div
+          className="info-content"
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           <h1 className="name" title={personal.name}>
             {personal.name}
           </h1>
           <p className="title">{personal.title}</p>
-        </div>
+        </motion.div>
 
         <button
           className="info_more-btn"
@@ -80,8 +96,14 @@ export default function Sidebar() {
         <div className="separator"></div>
 
         <ul className="social-list">
-          {contacts.social.map((social) => (
-            <li className="social-item" key={social.platform}>
+          {contacts.social.map((social, i) => (
+            <motion.li
+              className="social-item"
+              key={social.platform}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 + i * 0.08 }}
+            >
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -93,10 +115,10 @@ export default function Sidebar() {
                   name={`logo-${social.platform}`}
                 ></ion-icon>
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
-    </aside>
+    </motion.aside>
   );
 }

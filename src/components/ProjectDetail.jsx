@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import data from "../data/data.json";
 
 export default function ProjectDetail() {
@@ -9,27 +10,57 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <article className="project-details">
+      <motion.article
+        className="project-details"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <header>
           <button className="back-btn" onClick={() => navigate("/project")}>
             <ion-icon name="arrow-back"></ion-icon> Back to Projects
           </button>
           <h2 className="h2 detail-title">Project not found</h2>
         </header>
-      </article>
+      </motion.article>
     );
   }
 
   return (
-    <article className="project-details" data-page="project-details">
+    <motion.article
+      className="project-details"
+      data-page="project-details"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <header>
         <button className="back-btn" onClick={() => navigate("/project")}>
           <ion-icon name="arrow-back"></ion-icon> Back to Projects
         </button>
-        <h2 className="h2 detail-title">{project.title}</h2>
+        <motion.h2
+          className="h2 detail-title"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
+          {project.title}
+        </motion.h2>
       </header>
 
-      <section className="project-detail-content">
+      <motion.section
+        className="project-detail-content"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, y: 24 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, delay: 0.25, staggerChildren: 0.1 },
+          },
+        }}
+      >
         <div className="main-div">
           <figure className="project-detail-img">
             <img
@@ -41,26 +72,56 @@ export default function ProjectDetail() {
           </figure>
 
           {project.issue && (
-            <div className="warning-box">
+            <motion.div
+              className="warning-box"
+              variants={{
+                hidden: { opacity: 0, x: -20 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
               <p>
                 <strong>Note:</strong> {project.issue} Apologies for the
                 inconvenience
               </p>
-            </div>
+            </motion.div>
           )}
 
           <div className="project-info">
-            <ul className="tech-stack-list">
+            <motion.ul
+              className="tech-stack-list"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+              }}
+            >
               {project.techStack.map((tech) => (
-                <li key={tech}>{tech}</li>
+                <motion.li
+                  key={tech}
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                >
+                  {tech}
+                </motion.li>
               ))}
-            </ul>
-            <div
+            </motion.ul>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
               className="project-text"
               dangerouslySetInnerHTML={{ __html: project.description }}
-            ></div>
+            ></motion.div>
 
-            <div className="project-links">
+            <motion.div
+              className="project-links"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+            >
               {project.github && (
                 <a
                   href={project.github}
@@ -81,10 +142,10 @@ export default function ProjectDetail() {
                   <ion-icon name="globe-outline"></ion-icon> Live Demo
                 </a>
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
-    </article>
+      </motion.section>
+    </motion.article>
   );
 }

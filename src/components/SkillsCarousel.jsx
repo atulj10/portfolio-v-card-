@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import data from "../data/data.json";
 
 export default function SkillsCarousel() {
@@ -55,13 +56,25 @@ export default function SkillsCarousel() {
       <div className="skills-carousel-wrapper">
         <div className="skills-carousel" ref={carouselRef}>
           {skillCategories.map((category) => (
-            <div className="skills-group" key={category.name}>
+            <motion.div
+              className="skills-group"
+              key={category.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="skills-category-header">
                 <span className="skills-category-name">{category.name}</span>
               </div>
               <div className="skills-grid">
-                {category.skills.map((skill) => (
-                  <div className="skill-card" key={skill.name}>
+                {category.skills.map((skill, i) => (
+                  <motion.div
+                    className="skill-card"
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                  >
                     <div className="skill-card-icon">
                       <ion-icon name={skill.icon}></ion-icon>
                     </div>
@@ -73,10 +86,10 @@ export default function SkillsCarousel() {
                       ></div>
                     </div>
                     <span className="skill-level-text">{skill.level}%</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

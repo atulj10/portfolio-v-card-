@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import data from "../data/data.json";
 
 export default function Resume() {
@@ -5,11 +6,20 @@ export default function Resume() {
 
   return (
     <article className="resume" data-page="resume">
-      <header>
+      <motion.header
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="h2 article-title">Resume</h2>
-      </header>
+      </motion.header>
 
-      <section className="timeline">
+      <motion.section
+        className="timeline"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+      >
         <div className="title-wrapper">
           <div className="icon-box">
             <ion-icon name="book-outline"></ion-icon>
@@ -19,7 +29,14 @@ export default function Resume() {
 
         <ol className="timeline-list">
           {experience.map((job, index) => (
-            <li className="timeline-item" key={`${job.company}-${index}`}>
+            <motion.li
+              className="timeline-item"
+              key={`${job.company}-${index}`}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+            >
               <h4 className="h4 timeline-item-title">
                 {job.company}
                 {job.url && (
@@ -38,12 +55,19 @@ export default function Resume() {
                 {job.role ? " " : ""}
                 {job.description}
               </p>
-            </li>
+            </motion.li>
           ))}
         </ol>
-      </section>
+      </motion.section>
 
-      <li className="service-item" style={{ marginTop: 20 }}>
+      <motion.li
+        className="service-item"
+        style={{ marginTop: 20 }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="service-content-box">
           <h4 className="h4 service-item-title">
             <a
@@ -61,7 +85,7 @@ export default function Resume() {
             </a>
           </h4>
         </div>
-      </li>
+      </motion.li>
     </article>
   );
 }
