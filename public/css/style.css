@@ -166,6 +166,15 @@ html {
 
 body {
   background: var(--smoky-black);
+  overflow-x: hidden;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 /*-----------------------------------*\
