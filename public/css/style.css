@@ -2997,7 +2997,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 [data-theme="light"] body {
-  background: #93d4f7;
+  background: linear-gradient(to bottom, #ffdf79, #ffc14d, #fa9a3c, #f27d3a);
 }
 
 [data-theme="light"] ::selection {
