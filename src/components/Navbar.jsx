@@ -1,9 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTheme } from "../context/themeContext";
 
 const links = ["about", "resume", "project", "blog", "contact"];
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
     <motion.nav
       className="navbar"
@@ -32,6 +36,18 @@ export default function Navbar() {
           </motion.li>
         ))}
       </ul>
+
+      <motion.button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+        title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4, delay: 0.9 }}
+      >
+        <ion-icon name={isDark ? "sunny-outline" : "moon-outline"}></ion-icon>
+      </motion.button>
     </motion.nav>
   );
 }

@@ -2749,3 +2749,172 @@ textarea.form-input::-webkit-resizer {
   top: 55px;
   left: 20px;
 }
+
+/*-----------------------------------*\
+  #THEME
+\*-----------------------------------*/
+
+:root {
+  color-scheme: dark;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange-yellow-crayola);
+  font-size: 20px;
+  padding: 20px 4px;
+  margin-left: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color var(--transition-1), transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--light-gray-70);
+  transform: scale(1.15);
+}
+
+/*-----------------------------------*\
+  #LIGHT THEME
+\*-----------------------------------*/
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* gradient */
+
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 99%) 3%,
+    hsl(220, 18%, 91%) 97%
+  );
+  --bg-gradient-jet: linear-gradient(
+      to bottom right,
+      hsla(0, 0%, 100%, 0.6) 0%,
+      hsla(220, 18%, 91%, 0) 100%
+    ),
+    hsl(220, 16%, 92%);
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(45, 100%, 78%) 0%,
+    hsla(45, 100%, 72%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+      135deg,
+      hsla(45, 100%, 78%, 0.25) 0%,
+      hsla(45, 100%, 72%, 0) 59.86%
+    ),
+    hsl(220, 16%, 92%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsla(220, 12%, 82%, 0.9) 0%,
+    hsla(220, 12%, 82%, 0) 50%
+  );
+  --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(42, 90%, 50%),
+    hsl(35, 95%, 48%)
+  );
+
+  /* solid */
+
+  --jet: hsl(220, 12%, 86%);
+  --onyx: hsl(220, 14%, 80%);
+  --eerie-black-1: hsl(220, 16%, 95%);
+  --eerie-black-2: hsl(220, 14%, 89%);
+  --smoky-black: hsl(224, 22%, 90%);
+  --white-1: hsl(216, 20%, 15%);
+  --white-2: hsl(216, 18%, 19%);
+  --orange-yellow-crayola: hsl(41, 92%, 50%);
+  --vegas-gold: hsl(45, 65%, 38%);
+  --light-gray: hsl(216, 10%, 38%);
+  --light-gray-70: hsla(216, 10%, 38%, 0.7);
+
+  /* shadow */
+
+  --shadow-1: -4px 8px 24px hsla(220, 12%, 45%, 0.16);
+  --shadow-2: 0 16px 30px hsla(220, 12%, 45%, 0.14);
+  --shadow-3: 0 16px 40px hsla(220, 12%, 45%, 0.14);
+  --shadow-4: 0 25px 50px hsla(220, 12%, 45%, 0.12);
+  --shadow-5: 0 24px 80px hsla(220, 12%, 45%, 0.18);
+}
+
+[data-theme="light"] body {
+  background: linear-gradient(
+    180deg,
+    hsl(226, 26%, 93%) 0%,
+    hsl(218, 16%, 87%) 100%
+  );
+  background-attachment: fixed;
+}
+
+[data-theme="light"] ::selection {
+  color: hsl(0, 0%, 100%);
+}
+
+[data-theme="light"] .sidebar,
+[data-theme="light"] article {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+[data-theme="light"] .navbar {
+  background: hsla(220, 20%, 96%, 0.55);
+}
+
+[data-theme="light"] .select-item button:hover {
+  --eerie-black-2: hsl(220, 12%, 82%);
+}
+
+[data-theme="light"] .info-content .title-yellow,
+[data-theme="light"] .info-content .title-red {
+  color: hsl(0, 0%, 100%);
+}
+
+[data-theme="light"] .info-content .title-grey,
+[data-theme="light"] .info-content .title-onyx {
+  color: hsl(216, 20%, 15%);
+}
+
+[data-theme="light"] body::-webkit-scrollbar-thumb {
+  background: hsla(216, 12%, 40%, 0.35);
+  box-shadow: inset 1px 1px 0 hsla(216, 12%, 40%, 0.2),
+    inset -1px -1px 0 hsla(216, 12%, 40%, 0.2);
+}
+
+[data-theme="light"] body::-webkit-scrollbar-thumb:hover {
+  background: hsla(216, 12%, 40%, 0.5);
+}
+
+[data-theme="light"] #stars,
+[data-theme="light"] #stars::after,
+[data-theme="light"] #stars2,
+[data-theme="light"] #stars2::after,
+[data-theme="light"] #stars3,
+[data-theme="light"] #stars3::after {
+  display: none;
+}
+
+[data-theme="light"] .neon-ball {
+  opacity: 0.35;
+}
+
+[data-theme="light"] .moon {
+  background: linear-gradient(145deg, #ffe9b8, #ffd27a);
+  box-shadow:
+    0 0 50px 12px rgba(255, 190, 80, 0.35),
+    0 0 90px 24px rgba(255, 190, 80, 0.18),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="light"] .moon-crater {
+  background: rgba(255, 200, 120, 0.4);
+  box-shadow: inset 2px 2px 5px rgba(180, 120, 40, 0.25);
+}
