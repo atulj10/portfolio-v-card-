@@ -2758,6 +2758,133 @@ textarea.form-input::-webkit-resizer {
   color-scheme: dark;
 }
 
+/* Animated Sun (light theme) */
+.sun {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 100px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.9;
+  box-shadow: 0px 0px 40px 15px white;
+}
+
+.ray_box {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 70px;
+  animation: ray_anim 120s linear infinite;
+}
+
+.ray {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  margin-left: 10px;
+  border-radius: 80% 80% 0 0;
+  position: absolute;
+  opacity: 0.1;
+}
+
+.ray1 {
+  height: 170px;
+  width: 30px;
+  transform: rotate(180deg);
+  top: -175px;
+  left: 15px;
+}
+
+.ray2 {
+  height: 100px;
+  width: 8px;
+  transform: rotate(220deg);
+  top: -90px;
+  left: 75px;
+}
+
+.ray3 {
+  height: 170px;
+  width: 50px;
+  transform: rotate(250deg);
+  top: -80px;
+  left: 100px;
+}
+
+.ray4 {
+  height: 120px;
+  width: 14px;
+  transform: rotate(305deg);
+  top: 30px;
+  left: 100px;
+}
+
+.ray5 {
+  height: 140px;
+  width: 30px;
+  transform: rotate(-15deg);
+  top: 60px;
+  left: 40px;
+}
+
+.ray6 {
+  height: 90px;
+  width: 50px;
+  transform: rotate(30deg);
+  top: 60px;
+  left: -40px;
+}
+
+.ray7 {
+  height: 180px;
+  width: 10px;
+  transform: rotate(70deg);
+  top: -35px;
+  left: -40px;
+}
+
+.ray8 {
+  height: 120px;
+  width: 30px;
+  transform: rotate(100deg);
+  top: -45px;
+  left: -90px;
+}
+
+.ray9 {
+  height: 80px;
+  width: 10px;
+  transform: rotate(120deg);
+  top: -65px;
+  left: -60px;
+}
+
+.ray10 {
+  height: 190px;
+  width: 23px;
+  transform: rotate(150deg);
+  top: -185px;
+  left: -60px;
+}
+
+@keyframes ray_anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -2848,12 +2975,11 @@ textarea.form-input::-webkit-resizer {
 }
 
 [data-theme="light"] body {
-  background: linear-gradient(
-    180deg,
-    hsl(226, 26%, 93%) 0%,
-    hsl(218, 16%, 87%) 100%
-  );
-  background-attachment: fixed;
+  background: #2eb5e5;
+}
+
+[data-theme="light"] .sun {
+  display: block;
 }
 
 [data-theme="light"] ::selection {
@@ -2902,19 +3028,14 @@ textarea.form-input::-webkit-resizer {
   display: none;
 }
 
-[data-theme="light"] .neon-ball {
-  opacity: 0.35;
+[data-theme="light"] .neon-orbit {
+  display: none;
 }
 
 [data-theme="light"] .moon {
-  background: linear-gradient(145deg, #ffe9b8, #ffd27a);
-  box-shadow:
-    0 0 50px 12px rgba(255, 190, 80, 0.35),
-    0 0 90px 24px rgba(255, 190, 80, 0.18),
-    inset -5px -5px 15px rgba(255, 255, 255, 0.4);
+  display: none;
 }
 
-[data-theme="light"] .moon-crater {
-  background: rgba(255, 200, 120, 0.4);
-  box-shadow: inset 2px 2px 5px rgba(180, 120, 40, 0.25);
+[data-theme="light"] .shooting-stars {
+  display: none;
 }

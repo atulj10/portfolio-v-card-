@@ -1,10 +1,21 @@
 import { useEffect, useRef } from "react";
+import { useTheme } from "../context/themeContext";
 
 export default function ShootingStars() {
   const containerRef = useRef(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const container = containerRef.current;
+
+    const clearStars = () =>
+      container.querySelectorAll("span").forEach((span) => span.remove());
+
+    if (theme !== "dark") {
+      clearStars();
+      return;
+    }
+
     let timeout;
 
     const createStar = () => {
@@ -46,9 +57,9 @@ export default function ShootingStars() {
 
     return () => {
       clearTimeout(timeout);
-      container.querySelectorAll("span").forEach((span) => span.remove());
+      clearStars();
     };
-  }, []);
+  }, [theme]);
 
   return (
     <div className="shooting-stars" ref={containerRef} aria-hidden="true"></div>
