@@ -23,7 +23,7 @@ export default function FallingStars() {
             animate={{ rotate: 0, opacity: 1 }}
             exit={{ rotate: 90, opacity: 0 }}
             transition={SWAP}
-            style={{ originX: 1, originY: 0.5 }}
+            style={{ originX: 2.43, originY: -1.14 }}
           >
             <div className="moon-crater moon-crater--1"></div>
             <div className="moon-crater moon-crater--2"></div>
@@ -37,7 +37,7 @@ export default function FallingStars() {
             animate={{ rotate: 0, opacity: 1 }}
             exit={{ rotate: 90, opacity: 0 }}
             transition={SWAP}
-            style={{ originX: 1, originY: 0.5 }}
+            style={{ originX: 2.43, originY: -1.14 }}
           >
             <div className="sun">
               <div className="ray_box">
