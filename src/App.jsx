@@ -11,7 +11,6 @@ import Contact from "./components/Contact";
 import FallingStars from "./components/FallingStars";
 import ShootingStars from "./components/ShootingStars";
 import SplashScreen from "./components/SplashScreen";
-import Clouds from "./components/Clouds";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,7 +36,6 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
-      <Clouds />
       <FallingStars />
       <ShootingStars />
       <SplashScreen>
