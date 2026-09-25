@@ -274,6 +274,22 @@
   "filterCategories": ["All", "Web development", "Internship", "AI"],
   "blogPosts": [
     {
+      "title": "What about React Compiler !?",
+      "description": "A practical guide to React Compiler, how it automates memoization, and what it means for modern React performance.",
+      "category": "React JS",
+      "date": "Sept 10, 2026",
+      "url": "https://medium.com/@atulj10unofficial/what-about-react-compiler-70a025ab6041",
+      "image": "/images/react_compiler_blog.png"
+    },
+    {
+      "title": "React 19: The Developer Guide",
+      "description": "A practical guide to React 19, covering Actions, new hooks, server features, and improvements that simplify modern React development.",
+      "category": "Programming Fundamentals",
+      "date": "Sept 08, 2026",
+      "url": "https://medium.com/@atulj10unofficial/react-19-the-developer-guide-ab4de3817aa6",
+      "image": "/images/react_19_blog.png"
+    },
+    {
       "title": "Shallow vs Deep Copy in JavaScript: A Complete Guide with Examples",
       "description": "Master the difference between shallow and deep copy in JavaScript with examples to write more reliable, bug-free code.",
       "category": "Programming Fundamentals",
