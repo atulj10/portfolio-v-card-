@@ -1261,6 +1261,7 @@ main {
   position: relative;
   width: 100%;
   height: 200px;
+  aspect-ratio: 940 / 788;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
