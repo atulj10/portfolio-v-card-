@@ -5,18 +5,38 @@ const TEXT = "Hi \n I'm Atul ";
 const TYPE_DURATION = 2000;
 const HOLD = 500;
 const FADE = 800;
+const SPLASH_SESSION_KEY = "portfolio-splash-seen";
+
+function hasSeenSplash() {
+  try {
+    return sessionStorage.getItem(SPLASH_SESSION_KEY) === "true";
+  } catch {
+    return false;
+  }
+}
+
+function rememberSplash() {
+  try {
+    sessionStorage.setItem(SPLASH_SESSION_KEY, "true");
+  } catch {
+    return;
+  }
+}
 
 export default function SplashScreen({ children }) {
   const [chars, setChars] = useState(0);
   const [fading, setFading] = useState(false);
-  const [gone, setGone] = useState(false);
+  const [gone, setGone] = useState(hasSeenSplash);
 
   useEffect(() => {
+    if (gone) return;
+
+    rememberSplash();
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [gone]);
 
   useEffect(() => {
     if (gone) return;
